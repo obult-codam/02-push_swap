@@ -34,7 +34,7 @@ lstadd_input(t_input *last)
 	// be added as next previous needs to be set as what is given in last
 
 	last->next = lstnew_input(last);
-
+	return (last->next);
 }
 
 lstadd_index(t_indexing *first, int *index, int nbr)
