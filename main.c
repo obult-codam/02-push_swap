@@ -3,21 +3,26 @@
 
 int	main(int argc, char **argv)
 {
-	ft_putnbr_fd(argc, 1);
-	add_printarray_fd(argv, 1);
-	return (0);
+	t_input		*list;
+	t_indexing	*indexing;
+
+	list = 0;
+	indexing =0;
+	ft_index_list(argc, argv, &list, &indexing)
 }
 
 
-int	ft_index_list(int argc, char **argv, t_input *first, t_indexing *indexing)
+int	ft_index_list(int argc, char **argv, t_input **list, t_indexing **indexing)
 {
 	int	i;
+	t_input	*last;
 
+	last = *list;
 	i = 1;
 	while (1 < argc)
 	{
-		list = lstadd_input(list);
-		if (!list || !lstadd_index(indexing, &list->index, ft_atoi(argv[i])));
+		last = lstadd_input(last);
+		if (!last || !lstadd_index(indexing, &last->index, ft_atoi(argv[i])));
 		{
 			//nuke_all(pointers);
 			//return(error!);
@@ -25,24 +30,38 @@ int	ft_index_list(int argc, char **argv, t_input *first, t_indexing *indexing)
 		i++;
 	}
 	// set indexes based on t_indexing *indexing
-	// connect first piece of list to last piece of list by setting list->prev (maybe call first?)
+	// connect first piece of list to last piece of list by setting list->prev
 }
 
 lstadd_input(t_input *last)
 {
 	// last is last item in the list so entry can 
 	// be added as next previous needs to be set as what is given in last
-
+	if (!last)
+		return (lstnew_input(last));
 	last->next = lstnew_input(last);
 	return (last->next);
 }
 
-lstadd_index(t_indexing *first, int *index, int nbr)
+lstadd_index(t_indexing **first, int *index, int nbr)
 {
 	// new item must be made and placed in right spot in the list based on nbr
 	// new.nbr needs to be set to nbr
 	// new.index = index
+	t_indexing	iterator;
 
+	iterator = *first;
+	if (!*first)
+	{
+		*first = lstnew_index(0, index, nbr);
+		return (*first);
+	}
+	while (iterator && iterator->nbr < nbr)
+	{
+		 iterator = iterator->next;
+	}
+	iterator = lstnew_index(iterator->next, index, nbr);
+	return (iterator);  
 }
 
 t_indexing	*lstnew_index(t_indexing *next, int *index, int nbr)
