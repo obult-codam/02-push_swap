@@ -1,10 +1,10 @@
 NAME	= push_swap
-SRC_S	= main.c
+SRC_S	= main.c indexing.c
 OBJ	= ${SRC_S:.c=.o}
 CC		= gcc
 RM		= rm -f
 HEADER	= -I Libft/
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra -g
 
 all:		${NAME}
 
@@ -19,7 +19,7 @@ fclean:		clean
 re:			fclean all
 
 ${NAME}:	${OBJ} Libft/libft.a
-				${CC} -o $@ $^ 
+				${CC} -o $@ $^
 
 Libft/libft.a:
 				${MAKE} -C Libft 
