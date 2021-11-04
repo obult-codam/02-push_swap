@@ -10,11 +10,18 @@ all:		${NAME}
 
 .c.o:
 				${CC} -c ${CFLAGS} ${HEADER} $< -o ${<:.c=.o}
+
 clean:
-				${RM} ${OBJ}
+				@${RM} ${OBJ} \
+				$(info ************  Push_Swap Clean)
+
+libclean:
+				@${MAKE} clean -C Libft
 
 fclean:		clean
-				${RM} ${NAME}
+				@${RM} ${NAME} \
+				$(info ************  Push_Swap Removed) \
+				&& ${MAKE} fclean -C Libft
 
 re:			fclean all
 

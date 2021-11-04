@@ -6,7 +6,7 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/04 16:49:28 by obult         #+#    #+#                  #
-#    Updated: 2021/10/27 16:17:43 by obult         ########   odam.nl          #
+#    Updated: 2021/11/04 16:51:05 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,10 +51,12 @@ all:		${NAME}
 .c.o:
 				${CC} -c ${CFLAGS} $< -o ${<:.c=.o}
 clean:
-				${RM} ${REG_OBJS} ${BON_OBJS}
+				@${RM} ${REG_OBJS} ${BON_OBJS} \
+				$(info ************  Libft Clean)
 
 fclean:		clean
-				${RM} ${NAME}
+				@${RM} ${NAME} \
+				$(info ************  libft.a Removed)
 
 re:			fclean all
 
