@@ -16,12 +16,12 @@ clean:
 				$(info ************  Push_Swap Clean)
 
 libclean:
-				@${MAKE} clean -C Libft
+				@${MAKE} clean -C Libft --no-print-directory
 
 fclean:		clean
 				@${RM} ${NAME} \
 				$(info ************  Push_Swap Removed) \
-				&& ${MAKE} fclean -C Libft
+				&& ${MAKE} fclean -C Libft --no-print-directory
 
 re:			fclean all
 
@@ -30,6 +30,6 @@ ${NAME}:	${OBJ} Libft/libft.a
 				$(info ************  Push_Swap ready!)
 
 Libft/libft.a:
-				@${MAKE} -C Libft 
+				@${MAKE} -C Libft --no-print-directory
 
 .PHONY: all clean fclean re libft

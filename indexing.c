@@ -33,12 +33,8 @@ int	ft_index_list(int argc, char **argv, t_input **list, t_indexing **indexing)
 	return (0);
 }
 
-
-// needs to be rewritten
 t_input	*lstadd_input(t_input *last)
 {
-	// last is last item in the list so entry can 
-	// be added as next previous needs to be set as what is given in last
 	if (!last)
 		return (lstnew_input(last));
 	last->next = lstnew_input(last);
@@ -47,23 +43,12 @@ t_input	*lstadd_input(t_input *last)
 
 t_indexing	*lstadd_index(t_indexing **lst, int *index, int nbr)
 {
-	// new item must be made and placed in right spot in the list based on nbr
-	// new.nbr needs to be set to nbr
-	// new.index = index
-	// if (!*lst)
-	// {
-	// 	*lst = lstnew_index(NULL, index, nbr);
-	// 	return (*lst);
-	// }
 	while (*lst && (*lst)->nbr < nbr)
 	{
 		 lst = &((*lst)->next);
 	}
 	if (*lst && (*lst)->nbr == nbr)
 		return (NULL);
-	// if (*lst == NULL) 
-	// 	*lst = lstnew_index(NULL, index, nbr);
-	// else
 	*lst = lstnew_index(*lst, index, nbr);
 	return (*lst);  
 }
