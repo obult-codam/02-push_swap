@@ -17,12 +17,12 @@ void	set_index(t_indexing *indexing)
 
 void	write_list_nbr(t_input *last, t_input *item)
 {
-	if (item != NULL)
+	if (item != last)
 	{
 		ft_putnbr_fd(item->index, 1);
 		// write(1, "foo\n", 4);
 		write_list_nbr(last, item->next);
 	}
-	// else
-	// ft_putnbr_fd(item->index, 1);
+	else if (item != NULL)
+		ft_putnbr_fd(item->index, 1);
 }

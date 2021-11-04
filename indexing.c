@@ -4,9 +4,11 @@
 int	ft_index_list(int argc, char **argv, t_input **list, t_indexing **indexing)
 {
 	int	i;
-	t_input *save;
+	t_input	*save;
+	t_input	**store;
 
 	i = 1;
+	store = list;
 	while (i < argc)
 	{
 		if (i == 1)
@@ -26,7 +28,8 @@ int	ft_index_list(int argc, char **argv, t_input **list, t_indexing **indexing)
 	// set indexes based on t_indexing *indexing
 	set_index(*indexing);
 	// connect first piece of list to last piece of list by setting list->prev
-	//(*list)->prev = last;
+	(*store)->prev = save;
+	(*list)->next = *store;
 	return (0);
 }
 
