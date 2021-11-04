@@ -1,11 +1,12 @@
 #include "libft.h"
 #include "push_swap.h"
 
-int	ft_index_list(int argc, char **argv, t_input **list, t_indexing **indexing)
+// better name for input functions (stack or something else?)
+int	ft_index_list(int argc, char **argv, t_stack **list, t_indexing **indexing)
 {
 	int	i;
-	t_input	*save;
-	t_input	**store;
+	t_stack	*save;
+	t_stack	**store;
 
 	i = 1;
 	store = list;
@@ -20,20 +21,17 @@ int	ft_index_list(int argc, char **argv, t_input **list, t_indexing **indexing)
 		}
 		if (!*list || !lstadd_index(indexing, &((*list)->index), ft_atoi(argv[i])))
 		{
-			//nuke_all(pointers);
-			//return(error!);
+			return(0);
 		}
 		i++;
 	}
-	// set indexes based on t_indexing *indexing
 	set_index(*indexing);
-	// connect first piece of list to last piece of list by setting list->prev
 	(*store)->prev = save;
 	(*list)->next = *store;
-	return (0);
+	return (1);
 }
 
-t_input	*lstadd_input(t_input *last)
+t_stack	*lstadd_input(t_stack *last)
 {
 	if (!last)
 		return (lstnew_input(last));
@@ -66,11 +64,11 @@ t_indexing	*lstnew_index(t_indexing *next, int *index, int nbr)
 	return (new);
 }
 
-t_input	*lstnew_input(t_input *prev)
+t_stack	*lstnew_input(t_stack *prev)
 {
-	t_input *new;
+	t_stack *new;
 
-	new = malloc(sizeof(t_input));
+	new = malloc(sizeof(t_stack));
 	if (!new)
 		return (new);
 	new->prev = prev;

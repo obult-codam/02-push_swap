@@ -13,21 +13,21 @@ all:		${NAME}
 
 clean:
 				@${RM} ${OBJ} \
-				$(info ************  Push_Swap Clean)
+				$(info ************  push_swap Clean)
 
 libclean:
 				@${MAKE} clean -C Libft --no-print-directory
 
 fclean:		clean
 				@${RM} ${NAME} \
-				$(info ************  Push_Swap Removed) \
+				$(info ************  push_swap Removed) \
 				&& ${MAKE} fclean -C Libft --no-print-directory
 
 re:			fclean all
 
 ${NAME}:	${OBJ} Libft/libft.a
 				@${CC} -o $@ $^ \
-				$(info ************  Push_Swap ready!)
+				$(info ************  push_swap ready!)
 
 Libft/libft.a:
 				@${MAKE} -C Libft --no-print-directory
