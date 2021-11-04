@@ -6,7 +6,7 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/04 16:49:28 by obult         #+#    #+#                  #
-#    Updated: 2021/11/04 16:51:05 by obult         ########   odam.nl          #
+#    Updated: 2021/11/04 17:05:55 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,19 +49,21 @@ endif
 all:		${NAME}
 
 .c.o:
-				${CC} -c ${CFLAGS} $< -o ${<:.c=.o}
+				@${CC} -c ${CFLAGS} $< -o ${<:.c=.o}
+
 clean:
 				@${RM} ${REG_OBJS} ${BON_OBJS} \
-				$(info ************  Libft Clean)
+				$(info [][][][][][]  Libft clean)
 
 fclean:		clean
 				@${RM} ${NAME} \
-				$(info ************  libft.a Removed)
+				$(info [][][][][][]  libft.a removed)
 
 re:			fclean all
 
 ${NAME}:	${OBJS}
-				${LIB} $@ $^
+				@${LIB} $@ $^ \
+				$(info [][][][][][]  Library created)
 
 bonus:
 				${MAKE} WITH_BONUS=1 all

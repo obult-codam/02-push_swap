@@ -9,7 +9,7 @@ CFLAGS	= -Wall -Werror -Wextra -g
 all:		${NAME}
 
 .c.o:
-				${CC} -c ${CFLAGS} ${HEADER} $< -o ${<:.c=.o}
+				@${CC} -c ${CFLAGS} ${HEADER} $< -o ${<:.c=.o}
 
 clean:
 				@${RM} ${OBJ} \
@@ -26,9 +26,10 @@ fclean:		clean
 re:			fclean all
 
 ${NAME}:	${OBJ} Libft/libft.a
-				${CC} -o $@ $^
+				@${CC} -o $@ $^ \
+				$(info ************  Push_Swap ready!)
 
 Libft/libft.a:
-				${MAKE} -C Libft 
+				@${MAKE} -C Libft 
 
 .PHONY: all clean fclean re libft
