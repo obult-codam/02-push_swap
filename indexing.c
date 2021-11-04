@@ -24,7 +24,9 @@ int	ft_index_list(int argc, char **argv, t_input **list, t_indexing **indexing)
 		i++;
 	}
 	// set indexes based on t_indexing *indexing
+	set_index(*indexing);
 	// connect first piece of list to last piece of list by setting list->prev
+	//(*list)->prev = last;
 	return (0);
 }
 

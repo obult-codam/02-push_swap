@@ -1,5 +1,5 @@
 NAME	= push_swap
-SRC_S	= main.c indexing.c
+SRC_S	= main.c indexing.c input.c
 OBJ	= ${SRC_S:.c=.o}
 CC		= gcc
 RM		= rm -f

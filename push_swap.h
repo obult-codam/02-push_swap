@@ -21,4 +21,8 @@ t_indexing	*lstadd_index(t_indexing **lst, int *index, int nbr);
 t_indexing	*lstnew_index(t_indexing *next, int *index, int nbr);
 t_input	*lstnew_input(t_input *prev);
 
+void	set_index(t_indexing *indexing);
+
+void	write_list_nbr(t_input *last, t_input *write);
+
 #endif
