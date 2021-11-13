@@ -1,11 +1,13 @@
 #include "libft.h"
 #include "push_swap.h"
+#include <stdio.h>
 
 void	ft_sort_parent(t_stack **top_a, int total_nbrs)
 {
 	t_stack	*b;
 	t_sort_data	data;
 	
+	b = 0;
 	data.top_a = top_a;
 	data.top_b = &b;
 	data.size = total_nbrs;
@@ -35,12 +37,12 @@ void	split_in_groups(t_sort_data data)
 	min = get_min(data.size, *data.top_a);
 	while (i < data.size)
 	{
-		if ((*data.top_a)->index <= min + data.size / 3)
+		if ((*data.top_a)->index < (min + data.size / 3))
 		{
 			ft_push(data.top_a, data.top_b, "pb");
 			ft_rotate(data.top_b, "rb");
 		}
-		else if ((*data.top_a)->index <= min + (data.size * 2) / 3)
+		else if ((*data.top_a)->index < (min + (data.size * 2) / 3))
 		{
 			ft_push(data.top_a, data.top_b, "pb");
 		}
@@ -50,5 +52,6 @@ void	split_in_groups(t_sort_data data)
 		}
 		i++;
 	}
+	// not always needed how to reduce?
 	ft_revr_x(data.top_a, "rra", data.size - (data.size * 2) / 3);
 }

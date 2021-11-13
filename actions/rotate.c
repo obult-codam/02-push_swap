@@ -18,6 +18,8 @@ void	ft_revr_x(t_stack **r, char *msg, int rotations)
 	int	i;
 
 	i = 0;
+	if (*r == ft_get_bottom_offset(*r, rotations))
+		return ;
 	while (i < rotations)
 	{
 		ft_rev_rotate(r, msg);
