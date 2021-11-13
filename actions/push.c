@@ -24,3 +24,29 @@ void	ft_push(t_stack **origin, t_stack **dest, char *msg)
 	}
 	ft_putendl_fd(msg, 1);
 }
+
+void	ft_bottom_push(t_stack **org, t_stack **dst, char from)
+{
+	char	rotate[3];
+	char	push[2];
+
+	rotate[0] = 'r';
+	rotate[1] = 'r';
+	rotate[2] = from;
+	push[0] = 'p';
+	push[1] = from;
+	ft_rev_rotate(org, rotate);
+	ft_push(org, dst, push);
+}
+
+void	ft_bottom_push_x(t_stack **org, t_stack **dst, char from, int x)
+{
+	int i;
+
+	i = 0;
+	while (i < x)
+	{
+		ft_bottom_push(org, dst, from);
+		i++;
+	}
+}

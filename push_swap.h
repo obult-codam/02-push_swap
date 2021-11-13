@@ -21,10 +21,7 @@ typedef struct s_sort_data
 	t_stack		**top_a;
 	t_stack		**top_b;
 	t_stack		*start;
-	t_stack		*end;
 	int			size;
-	int			*min;
-	int			*max;
 }	t_sort_data;
 
 int	ft_index_list(int argc, char **argv, t_stack **list, t_indexing **indexing);
@@ -42,6 +39,6 @@ void	write_list_nbr(t_stack *last, t_stack *write);
 
 
 
-void	get_minmax(t_sort_data data);
+void	get_min(t_sort_data data);
 
 #endif 
