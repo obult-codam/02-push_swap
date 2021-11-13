@@ -1,3 +1,4 @@
+#include "push_swap.h"
 #include "libft.h"
 
 void	ft_push(t_stack **origin, t_stack **dest, char *msg)

@@ -9,21 +9,21 @@ void	ft_sort_parent(t_stack **top_a, int total_nbrs)
 	data.top_a = top_a;
 	data.top_b = &b;
 	data.size = total_nbrs;
-
-
-
-
+	ft_sort(data);
 }
 
 void	ft_sort(t_sort_data data)
 {
 	if (data.size < 6)
-		ft_solve_on_a(data);
+		return ;
+		// ft_solve_on_a(data);
 	else
+	{
 		split_in_groups(data);
 		ft_sort_max(data);
 		ft_sort_mid(data);
-		ft_sort_min(data);		
+		ft_sort_min(data);
+	}
 }
 
 void	split_in_groups(t_sort_data data)
@@ -32,7 +32,7 @@ void	split_in_groups(t_sort_data data)
 	int	min;
 
 	i = 0;
-	min = get_min(data);
+	min = get_min(data.size, *data.top_a);
 	while (i < data.size)
 	{
 		if ((*data.top_a)->index <= min + data.size / 3)
@@ -50,5 +50,5 @@ void	split_in_groups(t_sort_data data)
 		}
 		i++;
 	}
-	ft_revr_x(data.top_a, "rra", data.size - (data.size * 2) / 3)
+	ft_revr_x(data.top_a, "rra", data.size - (data.size * 2) / 3);
 }

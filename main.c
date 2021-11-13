@@ -22,12 +22,13 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
+		ft_sort_parent(&list, argc - 1); 
 		// solve
 		// ft_push(&list, &b, "msg");
 		// ft_push(&list, &b, "msg2");
 		// ft_rotate(&list);	//
-		write_list_nbr(list->prev, list);
-		write(1, "\n", 1);
+		// write_list_nbr(list->prev, list);
+		// write(1, "\n", 1);
 		// write_list_nbr(b->prev, b);
 		// write(1, "\n", 1);
 		nuke_all(list, NULL, indexing);

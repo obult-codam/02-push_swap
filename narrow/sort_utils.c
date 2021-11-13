@@ -1,4 +1,5 @@
-
+#include "push_swap.h"
+#include "libft.h"
 
 void	ft_sort_min(t_sort_data data)
 {
@@ -22,19 +23,19 @@ void	ft_sort_max(t_sort_data data)
 	ft_sort(data);
 }
 
-int	get_min(t_sort_data data)
+int	get_min(int size, t_stack *start)
 {
 	int	i;
 	int	min;
 
 	i = 0;
-	min = data.start->index;
-	while (i < data.size)
+	min = start->index;
+	while (i < size)
 	{
-		if (data.start->index < min)
-			min = data.start->index;
+		if (start->index < min)
+			min = start->index;
 		i++;
-		data.start = data.start->next;
+		start = start->next;
 	}
 	return (min);
 }
