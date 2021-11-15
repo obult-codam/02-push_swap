@@ -57,4 +57,16 @@ void	ft_rotate(t_stack **r, char *msg);
 void	ft_rev_rotate(t_stack **r, char *msg);
 void	ft_revr_x(t_stack **r, char *msg, int rotations);
 
+void	ft_swap(t_stack *swap);
+void	ft_swap_a(t_stack *swap);
+void	ft_swap_b(t_stack *swap);
+void	ft_swapsort(t_sort_data data);
+void	ft_swapsolve(t_sort_data data);
+
+void	ft_solve_on_a(t_sort_data data);
+void	ft_solve_2a(t_sort_data data);
+void	ft_solve_3a(t_sort_data data);
+void	ft_solve_4a(t_sort_data data);
+void	ft_solve_5a(t_sort_data data);
+
 #endif 

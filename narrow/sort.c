@@ -17,8 +17,7 @@ void	ft_sort_parent(t_stack **top_a, int total_nbrs)
 void	ft_sort(t_sort_data data)
 {
 	if (data.size < 6)
-		return ;
-		// ft_solve_on_a(data);
+		ft_solve_on_a(data);
 	else
 	{
 		split_in_groups(data);
@@ -52,6 +51,5 @@ void	split_in_groups(t_sort_data data)
 		}
 		i++;
 	}
-	// not always needed how to reduce?
 	ft_revr_x(data.top_a, "rra", data.size - (data.size * 2) / 3);
 }
