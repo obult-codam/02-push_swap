@@ -51,3 +51,15 @@ void	ft_bottom_push_x(t_stack **org, t_stack **dst, char from, int x)
 		i++;
 	}
 }
+
+void	ft_push_x(t_stack **org, t_stack **dst, char *msg, int x)
+{
+	int	i;
+
+	i = 0;
+	while (i < x)
+	{
+		ft_push(org, dst, msg);
+		i++;
+	}
+}

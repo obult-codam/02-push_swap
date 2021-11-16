@@ -46,7 +46,7 @@ void	split_in_groups_b(t_sort_data data);
 void	ft_sort_min(t_sort_data data);
 void	ft_sort_mid(t_sort_data data);
 void	ft_sort_max(t_sort_data data);
-int	get_min(int size, t_stack *start);
+int		get_min(int size, t_stack *start);
 t_stack		*ft_get_bottom_offset(t_stack *start, int offset);
 
 void	ft_push(t_stack **origin, t_stack **dest, char *msg);

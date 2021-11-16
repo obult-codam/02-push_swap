@@ -4,8 +4,7 @@
 void	ft_sort_b(t_sort_data data)
 {
 	if (data.size < 6)
-	return ;
-		// ft_solve_on_b(data);
+		ft_quicksolve(data);
 	else
 	{
 		split_in_groups_b(data);
