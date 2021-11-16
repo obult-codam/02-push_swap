@@ -5,13 +5,31 @@
 
 // this should be able to solve anything coming from stack B
 
-void	ft_quicksolve(t_sort_data data)
+// this is not working yet and only solves the first two items (but effeciently!)
+
+void	ft_solve_on_b(t_sort_data data)
+{
+	int	r;
+
+	if (data.size == 1)
+		ft_push(data.top_b, data.top_a, "pb");
+	else if (data.size > 1)
+	{
+		r = ft_quicksolve(data);
+		ft_revr_x(data.top_b, "rrb", r);
+		data.size = data.size - 2;
+		ft_solve_on_b(data);
+	}
+}
+
+int	ft_quicksolve(t_sort_data data)
 {
 	int	max;
 	int	i;
-
+	int	r;
 
 	i = 0;
+	r = 0;
 	max = data.size + getmin(data.size, *data.top_b) - 1;
 	while (i < data.size)
 	{
@@ -25,13 +43,19 @@ void	ft_quicksolve(t_sort_data data)
 				if ((*data.top_a)->index == max)
 					max--;
 			}
+			else
+			{
+				ft_solve_2a(data);
+			}
 		}
 		else
 		{
 			ft_rotate(data.top_b, "rb");
+			r++;
 		}
 		i++;
 	}
+	return (r);
 }
 
 void	ft_hustle(t_sort_data data)
