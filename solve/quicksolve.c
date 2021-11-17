@@ -96,7 +96,7 @@ int	ft_send_2ba(t_sort_data data)
 			break ;
 		if ((*data.top_b)->index >= max -1)
 		{
-			ft_push(data.top_b, data.top_a, "pb");
+			ft_push(data.top_b, data.top_a, "pa");
 			ft_solve_2a(data);
 		}
 		else
@@ -126,7 +126,7 @@ void	ft_solve_on_b(t_sort_data data)
 		}
 		else if (data.size == 1)
 		{
-			ft_push(data.top_b, data.top_a, "pb");
+			ft_push(data.top_b, data.top_a, "pa");
 			data.size--;
 		}
 	}
