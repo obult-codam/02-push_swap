@@ -50,6 +50,7 @@ int		get_min(int size, t_stack *start);
 t_stack		*ft_get_bottom_offset(t_stack *start, int offset);
 
 void	ft_push(t_stack **origin, t_stack **dest, char *msg);
+void	ft_push_x(t_stack **org, t_stack **dst, char *msg, int x);
 void	ft_bottom_push(t_stack **org, t_stack **dst, char from);
 void	ft_bottom_push_x(t_stack **org, t_stack **dst, char from, int x);
 
@@ -68,5 +69,9 @@ void	ft_solve_2a(t_sort_data data);
 void	ft_solve_3a(t_sort_data data);
 void	ft_solve_4a(t_sort_data data);
 void	ft_solve_5a(t_sort_data data);
+
+void	ft_hustle(t_sort_data data);
+int	ft_quicksolve(t_sort_data data);
+void	ft_solve_on_b(t_sort_data data);
 
 #endif 

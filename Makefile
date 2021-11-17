@@ -1,7 +1,7 @@
 NAME	= push_swap
 SRC_S	= main.c input/indexing.c input/lst_options.c actions/push.c actions/rotate.c \
 			narrow/sort.c narrow/sort_b.c narrow/sort_utils.c solve/general.c \
-			actions/swap.c
+			actions/swap.c solve/quicksolve.c
 OBJ	= ${SRC_S:.c=.o}
 CC		= gcc
 RM		= rm -f

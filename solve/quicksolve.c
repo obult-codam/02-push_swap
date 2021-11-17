@@ -7,46 +7,97 @@
 
 // this is not working yet and only solves the first two items (but effeciently!)
 
-void	ft_solve_on_b(t_sort_data data)
-{
-	int	r;
+#include "push_swap.h"
+#include "libft.h"
+#include <stdio.h>
 
-	if (data.size == 1)
-		ft_push(data.top_b, data.top_a, "pb");
-	else if (data.size > 1)
+// void	ft_solve_on_b(t_sort_data data)
+// {
+// 	int	r;
+
+// 	// printf("kiekaboo: %i\n", data.size);
+// 	if (data.size == 1)
+// 		ft_push(data.top_b, data.top_a, "pb");
+// 	else if (data.size > 1)
+// 	{
+// 		r = ft_quicksolve(data);
+// 		ft_revr_x(data.top_b, "rrb", r);
+// 		data.size = data.size - 2;		// this is the problem it does not have to bne two always!!!
+// 		if (r)
+// 			ft_solve_on_b(data);
+// 	}
+// }
+
+// int	ft_quicksolve(t_sort_data data)
+// {
+// 	int	max;
+// 	int	i;
+// 	int	r;
+
+// 	i = 0;
+// 	r = 0;
+// 	max = data.size + get_min(data.size, *data.top_b) - 1;
+// 	// printf("max: %i\n", max);
+// 	while (i < data.size)
+// 	{
+// 		if ((*data.top_b)->index >= max - 1)
+// 		{
+// 			ft_push(data.top_b, data.top_a, "pb");
+// 			if ((*data.top_a)->index == max && *data.top_b != NULL)
+// 			{
+// 				ft_hustle(data);
+// 				max--;
+// 				if ((*data.top_a)->index == max)
+// 					max--;
+// 			}
+// 			else
+// 			{
+// 				ft_solve_2a(data);
+// 			}
+// 		}
+// 		else
+// 		{
+// 			ft_rotate(data.top_b, "rb");
+// 			r++;
+// 		}
+// 		i++;
+// 	}
+// 	return (r);
+// }
+
+void	ft_hustle(t_sort_data data)
+{
+	if ((*data.top_a)->index > (*data.top_a)->next->index)
 	{
-		r = ft_quicksolve(data);
-		ft_revr_x(data.top_b, "rrb", r);
-		data.size = data.size - 2;
-		ft_solve_on_b(data);
+		if ((*data.top_b)->index < (*data.top_b)->next->index)
+		{
+			// printf("a1: %i, a2: %i, b1: %i, b2: %i", (*data.top_a)->index, (*data.top_a)->next->index, (*data.top_b)->index, (*data.top_b)->next->index);
+			ft_swap(*data.top_a);
+			ft_swap(*data.top_b);
+			ft_putendl_fd("ss", 1);
+		}
+		else
+			ft_swap_a(*data.top_a);
 	}
 }
 
-int	ft_quicksolve(t_sort_data data)
+int	ft_send_2ba(t_sort_data data)
 {
-	int	max;
 	int	i;
 	int	r;
+	int	max;
 
 	i = 0;
 	r = 0;
-	max = data.size + getmin(data.size, *data.top_b) - 1;
+	max = data.size + get_min(data.size, *data.top_b) - 1;
 	while (i < data.size)
 	{
-		if ((*data.top_b)->index >= max - 1)
+		if (i - r == 2)
+			break ;
+		if ((*data.top_b)->index >= max -1)
 		{
 			ft_push(data.top_b, data.top_a, "pb");
-			if ((*data.top_a)->index == max)
-			{
-				ft_hustle(data);
-				max--;
-				if ((*data.top_a)->index == max)
-					max--;
-			}
-			else
-			{
-				ft_solve_2a(data);
-			}
+			ft_solve_2a(data);
 		}
 		else
 		{
@@ -58,17 +109,27 @@ int	ft_quicksolve(t_sort_data data)
 	return (r);
 }
 
-void	ft_hustle(t_sort_data data)
+void	ft_solve_on_b(t_sort_data data)
 {
-	if ((*data.top_a)->index > (*data.top_a)->next->index)
+	int	r;
+	
+	r = 0;
+
+	while (data.size)
 	{
-		if ((*data.top_b)->index < (*data.top_b)->next->index)
+		// printf("size: %i\n", data.size);
+		if (data.size > 1)
 		{
-			ft_swap(*data.top_a);
-			ft_swap(*data.top_b);
-			ft_putendl_fd("ss", 1);
+			r = ft_send_2ba(data);
+			ft_revr_x(data.top_b, "rrb", r);
+			data.size = data.size - 2;
 		}
-		else
-			ft_swap_a(*data.top_a);
+		else if (data.size == 1)
+		{
+			ft_push(data.top_b, data.top_a, "pb");
+			data.size--;
+		}
 	}
 }
+
+

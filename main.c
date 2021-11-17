@@ -7,13 +7,9 @@ int	main(int argc, char **argv)
 {
 	t_stack		*list;
 	t_indexing	*indexing;
-	// t_stack		*b;
-	// t_sort_data	data;
 
 	indexing = 0;
 	list = 0;
-	// b = 0;
-	
 	if (!ft_index_list(argc, argv, &list, &indexing))
 	{
 		printf("error\n");
@@ -23,13 +19,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_sort_parent(&list, argc - 1); 
-		// solve
-		// ft_push(&list, &b, "msg");
-		// ft_push(&list, &b, "msg2");
-		// ft_rotate(&list);	//
-		write_list_nbr(list->prev, list);
-		write(1, "\n", 1);
-		// write_list_nbr(b->prev, b);
+		// write_list_nbr(list->prev, list);
 		// write(1, "\n", 1);
 		nuke_all(list, NULL, indexing);
 	}

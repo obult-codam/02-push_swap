@@ -1,6 +1,5 @@
 #include "libft.h"
 #include "push_swap.h"
-#include <stdio.h>
 
 void	ft_sort_parent(t_stack **top_a, int total_nbrs)
 {

@@ -1,8 +1,10 @@
 #include "push_swap.h"
 #include "libft.h"
+#include <stdio.h>
 
 void	ft_sort_b(t_sort_data data)
 {
+	// printf("size: %i\n", data.size);
 	if (data.size < 6)
 		ft_solve_on_b(data);
 	else
