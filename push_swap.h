@@ -51,8 +51,9 @@ t_stack		*ft_get_bottom_offset(t_stack *start, int offset);
 
 void	ft_push(t_stack **origin, t_stack **dest, char *msg);
 void	ft_push_x(t_stack **org, t_stack **dst, char *msg, int x);
-void	ft_bottom_push(t_stack **org, t_stack **dst, char from);
-void	ft_bottom_push_x(t_stack **org, t_stack **dst, char from, int x);
+void	ft_bottom_push_a(t_stack **org, t_stack **dst);
+void	ft_bottom_push_ax(t_stack **org, t_stack **dst, int x);
+void	ft_bottom_push_bx(t_stack **org, t_stack **dst, int x);
 
 void	ft_rotate(t_stack **r, char *msg);
 void	ft_rev_rotate(t_stack **r, char *msg);

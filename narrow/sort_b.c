@@ -31,14 +31,14 @@ void	split_in_groups_b(t_sort_data data)
 		}
 		else if ((*data.top_b)->index <= min + (data.size * 2) / 3)
 		{
-			ft_push(data.top_b, data.top_a, "pb");
+			ft_push(data.top_b, data.top_a, "pa");
 			ft_rotate(data.top_a, "ra");
 		}
 		else
 		{
-			ft_push(data.top_b, data.top_a, "pb");
+			ft_push(data.top_b, data.top_a, "pa");
 		}
 		i++;
 	}
-	ft_bottom_push_x(data.top_a, data.top_b, 'a', (data.size * 2) / 3);
+	ft_bottom_push_bx(data.top_a, data.top_b, (data.size * 2) / 3);
 }

@@ -26,28 +26,40 @@ void	ft_push(t_stack **origin, t_stack **dest, char *msg)
 	ft_putendl_fd(msg, 1);
 }
 
-void	ft_bottom_push(t_stack **org, t_stack **dst, char from)
-{
-	char	rotate[3];
-	char	push[2];
+// causing all the problems now..
 
-	rotate[0] = 'r';
-	rotate[1] = 'r';
-	rotate[2] = from;
-	push[0] = 'p';
-	push[1] = from;
-	ft_rev_rotate(org, rotate);
-	ft_push(org, dst, push);
+void	ft_bottom_push_b(t_stack **org, t_stack **dst)
+{
+	ft_rev_rotate(org, "rrb");
+	ft_push(org, dst, "pa");
 }
 
-void	ft_bottom_push_x(t_stack **org, t_stack **dst, char from, int x)
+void	ft_bottom_push_a(t_stack **org, t_stack **dst)
+{
+	ft_rev_rotate(org, "rra");
+	ft_push(org, dst, "pb");
+}
+
+void	ft_bottom_push_ax(t_stack **org, t_stack **dst, int x)
 {
 	int i;
 
 	i = 0;
 	while (i < x)
 	{
-		ft_bottom_push(org, dst, from);
+		ft_bottom_push_a(org, dst);
+		i++;
+	}
+}
+
+void	ft_bottom_push_bx(t_stack **org, t_stack **dst, int x)
+{
+	int i;
+
+	i = 0;
+	while (i < x)
+	{
+		ft_bottom_push_b(org, dst);
 		i++;
 	}
 }

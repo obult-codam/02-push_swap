@@ -50,6 +50,7 @@ void	write_list_nbr(t_stack *last, t_stack *item)
 	if (item != last)
 	{
 		ft_putnbr_fd(item->index, 1);
+		ft_putchar_fd(' ', 1);
 		write_list_nbr(last, item->next);
 	}
 	else if (item != NULL)
