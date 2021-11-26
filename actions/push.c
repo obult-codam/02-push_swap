@@ -30,14 +30,14 @@ void	ft_push(t_stack **origin, t_stack **dest, char *msg)
 
 void	ft_bottom_push_b(t_stack **org, t_stack **dst)
 {
-	ft_rev_rotate(org, "rrb");
-	ft_push(org, dst, "pa");
+	ft_rev_rotate(org, "rra");
+	ft_push(org, dst, "pb");
 }
 
 void	ft_bottom_push_a(t_stack **org, t_stack **dst)
 {
-	ft_rev_rotate(org, "rra");
-	ft_push(org, dst, "pb");
+	ft_rev_rotate(org, "rrb");
+	ft_push(org, dst, "pa");
 }
 
 void	ft_bottom_push_ax(t_stack **org, t_stack **dst, int x)
