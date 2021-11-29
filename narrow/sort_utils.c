@@ -45,6 +45,14 @@ t_stack		*ft_get_bottom_offset(t_stack *start, int offset)
 	int	i;
 
 	i = 0;
+	if (offset < 0)
+	{
+		while (i > offset)
+		{
+			start = start->next;
+			i--;
+		}
+	}
 	while (i < offset)
 	{
 		start = start->prev;
