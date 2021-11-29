@@ -26,7 +26,7 @@ void	ft_push(t_stack **origin, t_stack **dest, char *msg)
 	ft_putendl_fd(msg, 1);
 }
 
-// causing all the problems now..
+// from stack A to stack B is "pb"
 
 void	ft_bottom_push_b(t_stack **org, t_stack **dst)
 {
