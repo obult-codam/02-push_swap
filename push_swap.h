@@ -75,4 +75,8 @@ void	ft_hustle(t_sort_data data);
 int	ft_quicksolve(t_sort_data data);
 void	ft_solve_on_b(t_sort_data data);
 
+
+int	is_sorted(int argc, char **argv);
+
+
 #endif 
