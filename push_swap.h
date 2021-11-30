@@ -56,6 +56,7 @@ void	ft_bottom_push_ax(t_stack **org, t_stack **dst, int x);
 void	ft_bottom_push_bx(t_stack **org, t_stack **dst, int x);
 
 void	ft_rotate(t_stack **r, char *msg);
+void	ft_rotate_x(t_stack **r, char *msg, int rotations);
 void	ft_rev_rotate(t_stack **r, char *msg);
 void	ft_revr_x(t_stack **r, char *msg, int rotations);
 
@@ -78,5 +79,10 @@ void	ft_solve_on_b(t_sort_data data);
 
 int	is_sorted(int argc, char **argv);
 
+void	ft_short_solve(t_sort_data data);
+void	min_solve_three(t_sort_data data);
+void	min_solve_five(t_sort_data data);
+void	push_first_b(int range_start, int range_end, t_sort_data data);
+int	ft_offset_index(t_stack *start, int offset);
 
 #endif 

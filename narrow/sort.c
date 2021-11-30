@@ -10,7 +10,10 @@ void	ft_sort_parent(t_stack **top_a, int total_nbrs)
 	data.top_a = top_a;
 	data.top_b = &b;
 	data.size = total_nbrs;
-	ft_sort(data);
+	if (total_nbrs <= 5)
+		ft_short_solve(data);
+	else
+		ft_sort(data);
 }
 
 void	ft_sort(t_sort_data data)
