@@ -10,8 +10,13 @@ int	main(int argc, char **argv)
 
 	indexing = 0;
 	list = 0;
-	if (is_sorted(argc, argv))
+	if (is_sorted(argc, argv) == 1)
 		return (0);
+	else if (is_sorted(argc, argv) == -1)
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
 	if (!ft_index_list(argc, argv, &list, &indexing))
 	{
 		write(2, "Error\n", 6);
