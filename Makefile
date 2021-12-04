@@ -1,7 +1,10 @@
 NAME	= push_swap
-SRC_S	= main.c input/indexing.c input/lst_options.c actions/push.c actions/rotate.c \
-			narrow/sort.c narrow/sort_b.c narrow/sort_utils.c solve/general.c \
-			actions/swap.c solve/quicksolve.c minsteps/is_sorted.c minsteps/solve3.c
+SRC_S	= main.c \
+			src/input/indexing.c src/input/lst_options.c \
+			src/actions/push.c src/actions/rotate.c src/actions/swap.c \
+			src/narrow/sort.c src/narrow/sort_b.c src/narrow/sort_utils.c \
+			src/solve/general.c src/solve/quicksolve.c\
+			src/minsteps/is_sorted.c src/minsteps/solve3.c
 OBJ	= ${SRC_S:.c=.o}
 CC		= gcc
 RM		= rm -f

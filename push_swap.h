@@ -85,4 +85,4 @@ void	min_solve_five(t_sort_data data);
 void	push_first_b(int range_start, int range_end, t_sort_data data);
 int	ft_offset_index(t_stack *start, int offset);
 
-#endif 
+#endif
