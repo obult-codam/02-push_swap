@@ -38,5 +38,5 @@ void	split_in_groups_b(t_sort_data data)
 		}
 		i++;
 	}
-	ft_bottom_push_bx(data.top_a, data.top_b, data.size / 3);
+	ft_bottom_push_bx(data.top_a, data.top_b, ((data.size * 2) / 3) - data.size / 3);
 }

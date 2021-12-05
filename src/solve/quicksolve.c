@@ -4,7 +4,9 @@
 
 void	ft_hustle(t_sort_data data)
 {
-	if ((*data.top_a)->index > (*data.top_a)->next->index)
+	if (*data.top_b == NULL)
+		ft_solve_2a(data);
+	else if ((*data.top_a)->index > (*data.top_a)->next->index)
 	{
 		if ((*data.top_b)->index < (*data.top_b)->next->index)
 		{
@@ -14,6 +16,10 @@ void	ft_hustle(t_sort_data data)
 		}
 		else
 			ft_swap_a(*data.top_a);
+	}
+	else if ((*data.top_b)->index < (*data.top_b)->next->index)
+	{
+		ft_swap_b(*data.top_b);
 	}
 }
 
@@ -33,7 +39,7 @@ int	ft_send_2ba(t_sort_data data)
 		if ((*data.top_b)->index >= max -1)
 		{
 			ft_push(data.top_b, data.top_a, "pa");
-			ft_solve_2a(data);
+			ft_hustle(data);
 		}
 		else
 		{
@@ -49,8 +55,6 @@ void	ft_solve_on_b(t_sort_data data)
 {
 	int	r;
 	
-	r = 0;
-
 	while (data.size)
 	{
 		if (data.size > 1)

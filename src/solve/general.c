@@ -22,14 +22,14 @@ void	ft_solve_2a(t_sort_data data)
 
 void	ft_solve_3a(t_sort_data data)
 {
-	ft_solve_2a(data);
+	ft_hustle(data);
 	if ((*data.top_a)->next->index > (*data.top_a)->next->next->index)
 	{
 		ft_rotate(data.top_a, "ra");
-		ft_solve_2a(data);
+		ft_hustle(data);
 		ft_rev_rotate(data.top_a, "rra");
 	}
-	ft_solve_2a(data);
+	ft_hustle(data);
 }
 
 void	ft_solve_4a(t_sort_data data)

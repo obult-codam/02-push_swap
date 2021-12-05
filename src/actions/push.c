@@ -24,6 +24,8 @@ void	ft_push(t_stack **origin, t_stack **dest, char *msg)
 		og_cpy->prev = og_cpy;
 	}
 	ft_putendl_fd(msg, 1);
+	if (*origin == *dest)
+		*origin = NULL;
 }
 
 // from stack A to stack B is "pb"

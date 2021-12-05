@@ -47,6 +47,8 @@ int	nuke_all(t_stack *a_stack, t_stack *b_stack, t_indexing *indexing)
 
 void	write_list_nbr(t_stack *last, t_stack *item)
 {
+	if (last == NULL || item == NULL)
+		return ;
 	if (item != last)
 	{
 		ft_putnbr_fd(item->index, 1);
