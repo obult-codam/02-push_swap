@@ -26,8 +26,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_sort_parent(&list, argc - 1); 
-		// write_list_nbr(list->prev, list);
-		// write(1, "\n", 1);
+		// write_list_nbr(list, 0);
 		nuke_all(list, NULL, indexing);
 	}
 	return (0);

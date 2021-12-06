@@ -45,16 +45,21 @@ int	nuke_all(t_stack *a_stack, t_stack *b_stack, t_indexing *indexing)
 	return (0);
 }
 
-void	write_list_nbr(t_stack *last, t_stack *item)
+void	write_list_nbr(t_stack *item, t_stack *last)
 {
-	if (last == NULL || item == NULL)
+	if (item == NULL)
 		return ;
+	if (last == NULL)
+		last = item->prev;
 	if (item != last)
 	{
 		ft_putnbr_fd(item->index, 1);
 		ft_putchar_fd(' ', 1);
-		write_list_nbr(last, item->next);
+		write_list_nbr(item->next, last);
 	}
 	else if (item != NULL)
+	{
 		ft_putnbr_fd(item->index, 1);
+		write(1, "\n", 1);
+	}
 }

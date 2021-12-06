@@ -20,6 +20,10 @@ void	ft_sort(t_sort_data data)
 {
 	if (data.size < 6)
 		ft_solve_on_a(data);
+	else if (data.size < 12)
+	{
+		ft_split_in_two_a(data);
+	}
 	else
 	{
 		split_in_groups(data);

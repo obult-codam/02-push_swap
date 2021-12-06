@@ -34,7 +34,7 @@ void	set_index(t_indexing *indexing);
 
 int	nuke_all(t_stack *a_stack, t_stack *b_stack, t_indexing *indexing);
 
-void	write_list_nbr(t_stack *last, t_stack *write);
+void	write_list_nbr(t_stack *write, t_stack *last);
 
 
 void	ft_sort_parent(t_stack **top_a, int total_nbrs);
@@ -84,5 +84,8 @@ void	min_solve_three(t_sort_data data);
 void	min_solve_five(t_sort_data data);
 void	push_first_b(int range_start, int range_end, t_sort_data data);
 int	ft_offset_index(t_stack *start, int offset);
+
+void	ft_split_in_two(t_sort_data data);
+void	ft_split_in_two_a(t_sort_data data);
 
 #endif
