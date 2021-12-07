@@ -30,7 +30,7 @@ void	ft_split_in_two(t_sort_data data)
 	ft_sort_b(data);
 }
 
-void	ft_split_in_two_a(t_sort_data data)
+void	ft_medium_size_a(t_sort_data data)
 {
 	int	i;
 	int	min;

@@ -6,16 +6,9 @@ void	ft_sort_b(t_sort_data data)
 {
 	if (data.size < 6)
 		ft_solve_on_b(data);
-	else if (data.size < 12)
-	{
-		ft_split_in_two(data);
-	}
 	else
 	{
-		split_in_groups_b(data);
-		ft_sort_max(data);
-		ft_sort_mid(data);
-		ft_sort_min(data);
+		ft_split_in_two(data);
 	}
 }
 
