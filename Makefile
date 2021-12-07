@@ -9,7 +9,7 @@ OBJ	= ${SRC_S:.c=.o}
 CC		= gcc
 RM		= rm -f
 HEADER	= -I Libft/
-CFLAGS	= -Wall -Werror -Wextra -g
+CFLAGS	= -Wall -Werror -Wextra -g #-fsanitize=address
 
 all:		${NAME}
 

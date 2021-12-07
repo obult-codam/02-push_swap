@@ -26,9 +26,9 @@ void	min_solve_five(t_sort_data data)
 {
 	push_first_b(0, 1, data);
 	push_first_b(0, 1, data);
+	ft_hustle(data);
 	min_solve_three(data);
 	ft_push_x(data.top_b, data.top_a, "pa", 2);
-	ft_hustle(data);
 }
 
 void	push_first_b(int range_start, int range_end, t_sort_data data)
