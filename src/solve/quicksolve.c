@@ -1,6 +1,7 @@
 #include "push_swap.h"
 #include "libft.h"
 #include <stdio.h>
+#include <unistd.h>
 
 void	ft_hustle(t_sort_data data)
 {
@@ -55,6 +56,7 @@ void	ft_solve_on_b(t_sort_data data)
 {
 	int	r;
 	
+	write(1, "start\n", 6);
 	while (data.size)
 	{
 		if (data.size > 1)
@@ -69,4 +71,5 @@ void	ft_solve_on_b(t_sort_data data)
 			data.size--;
 		}
 	}
+	write(1, "end\n", 4);
 }
