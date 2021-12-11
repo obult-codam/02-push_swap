@@ -20,7 +20,7 @@ void	ft_sort(t_sort_data data)
 {
 	if (data.size < 6)
 		ft_solve_on_a(data);
-	else if (data.size < 13)
+	else if (data.size <= 12)
 	{
 		ft_medium_size_a(data);
 	}

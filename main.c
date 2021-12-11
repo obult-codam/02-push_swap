@@ -10,6 +10,8 @@ int	main(int argc, char **argv)
 
 	indexing = 0;
 	list = 0;
+	if (argc < 2)
+		return (0);
 	if (is_sorted(argc, argv) == 1)
 		return (0);
 	else if (is_sorted(argc, argv) == -1)
