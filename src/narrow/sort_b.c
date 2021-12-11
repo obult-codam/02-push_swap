@@ -4,7 +4,7 @@
 
 void	ft_sort_b(t_sort_data data)
 {
-	if (data.size < 6)
+	if (data.size < 8)
 	{
 		ft_fast_five_b(data);
 		// ft_solve_on_b(data);

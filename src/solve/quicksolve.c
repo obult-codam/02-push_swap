@@ -129,6 +129,7 @@ void	ft_fast_five_b(t_sort_data data)
 	int	min;
 	// int	high;
 
+	// write(1, "foo", 3);
 	min = get_min(data.size, *data.top_b);
 	ft_push_fast_first(data, data.size, min);
 	// high = min + data.size - 1;
