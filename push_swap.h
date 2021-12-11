@@ -1,6 +1,8 @@
 #ifndef PUSH_SWAP
 # define PUSH_SWAP
 
+#include <unistd.h>
+
 typedef struct s_stack
 {
 	struct s_stack	*next;

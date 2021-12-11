@@ -52,6 +52,7 @@ void	ft_solve_4a(t_sort_data data)
 		ft_hustle(data);
 		ft_revr_x(data.top_a, "rra", 1);
 		ft_hustle(data);
+		return ;
 		// write(1, "bar", 3);
 		// ra ra sa rra rra
 	}
@@ -62,7 +63,7 @@ void	ft_solve_4a(t_sort_data data)
 		ft_rotate(data.top_a, "ra");
 		ft_hustle(data);
 		ft_revr_x(data.top_a, "rra", 2);
-		ft_solve_3a(data);
+		// ft_solve_3a(data);
 		// write(1, "nin", 3);
 		// ra sa ra sa rra rra
 	}
@@ -77,6 +78,8 @@ void	ft_solve_4a(t_sort_data data)
 		ft_hustle(data);
 		ft_revr_x(data.top_a, "rra", 1);
 		ft_hustle(data);
+		return ;
 		// write(1, "faa", 3);
 	}
+	ft_solve_3a(data);
 }
