@@ -5,7 +5,10 @@
 void	ft_sort_b(t_sort_data data)
 {
 	if (data.size < 6)
-		ft_solve_on_b(data);
+	{
+		ft_fast_five_b(data);
+		// ft_solve_on_b(data);
+	}
 	else
 	{
 		ft_split_in_two(data);

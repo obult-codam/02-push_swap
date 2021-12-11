@@ -8,10 +8,8 @@ void	ft_solve_on_a(t_sort_data data)
 		ft_solve_2a(data);
 	if (data.size == 3)
 		ft_solve_3a(data);
-	if (data.size == 4)
-		ft_solve_4a(data);
-	if (data.size == 5)
-		ft_solve_5a(data);
+	if (data.size > 3 )
+		ft_swapsort(data);
 }
 
 void	ft_solve_2a(t_sort_data data)
@@ -30,14 +28,4 @@ void	ft_solve_3a(t_sort_data data)
 		ft_rev_rotate(data.top_a, "rra");
 	}
 	ft_hustle(data);
-}
-
-void	ft_solve_4a(t_sort_data data)
-{
-	ft_swapsort(data);
-}
-
-void	ft_solve_5a(t_sort_data data)
-{
-	ft_swapsort(data);
 }

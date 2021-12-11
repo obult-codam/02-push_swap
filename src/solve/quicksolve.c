@@ -99,9 +99,42 @@ int		push_one_a(int range_start, int range_end, t_sort_data data)
 		}
 		i++;
 	}
+	return (-1);
 }
 
-void	ft_fast_five_b (t_sort_data data)
+void	ft_push_fast_first (t_sort_data data, int size, int min)
 {
-	if (push_one_a(4, 5, data)) // 4 and five are placeholders need to use get_min to calc them!
+	int	high;
+
+	high = min + size - 1;
+	if (size == 1)
+		push_one_a(min, min, data);
+	else if (push_one_a(high - 1, high, data))
+	{
+		high--;
+		ft_push_fast_first(data, size - 1, min);
+	}
+	else
+	{
+		push_one_a(high, high, data);
+		ft_hustle(data);
+		if (size == 2)
+			return ;
+		ft_push_fast_first(data, size - 2, min);
+	}
+}
+
+void	ft_fast_five_b(t_sort_data data)
+{
+	int	min;
+	// int	high;
+
+	min = get_min(data.size, *data.top_b);
+	ft_push_fast_first(data, data.size, min);
+	// high = min + data.size - 1;
+	// if (push_one_a(high - 1, high, data))
+	// {
+	// 	high--;
+	// 	if ()
+	// }
 }

@@ -88,4 +88,6 @@ int	ft_offset_index(t_stack *start, int offset);
 void	ft_split_in_two(t_sort_data data);
 void	ft_medium_size_a(t_sort_data data);
 
+void	ft_fast_five_b (t_sort_data data);
+
 #endif
