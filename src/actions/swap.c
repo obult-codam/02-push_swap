@@ -31,7 +31,7 @@ void	ft_swapsort(t_sort_data data)
 	}
 	ft_hustle(data);
 	ft_swapsolve(data);
-	data.size = data.size -1;
+	data.size = data.size - 1;
 	ft_swapsort(data);
 }
 

@@ -3,9 +3,9 @@
 
 void	ft_sort_parent(t_stack **top_a, int total_nbrs)
 {
-	t_stack	*b;
+	t_stack		*b;
 	t_sort_data	data;
-	
+
 	b = 0;
 	data.top_a = top_a;
 	data.top_b = &b;

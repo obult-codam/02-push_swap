@@ -4,8 +4,8 @@
 // better name for input functions (stack or something else?)
 int	ft_index_list(int argc, char **argv, t_stack **list, t_indexing **indexing)
 {
-	int	i;
-	int	atoi_error;
+	int		i;
+	int		atoi_error;
 	t_stack	*save;
 	t_stack	**store;
 
@@ -20,8 +20,9 @@ int	ft_index_list(int argc, char **argv, t_stack **list, t_indexing **indexing)
 			save = lstadd_input(*list);
 			list = &save;
 		}
-		if (!*list || !lstadd_index(indexing, &((*list)->index), fo_atoi(argv[i], &atoi_error)))
-			return(0);
+		if (!*list || !lstadd_index(indexing, &((*list)->index),
+				fo_atoi(argv[i], &atoi_error)))
+			return (0);
 		if (atoi_error == 0)
 			return (0);
 		i++;
@@ -49,7 +50,7 @@ t_indexing	*lstadd_index(t_indexing **lst, int *index, int nbr)
 	if (*lst && (*lst)->nbr == nbr)
 		return (NULL);
 	*lst = lstnew_index(*lst, index, nbr);
-	return (*lst);  
+	return (*lst);
 }
 
 t_indexing	*lstnew_index(t_indexing *next, int *index, int nbr)
@@ -67,7 +68,7 @@ t_indexing	*lstnew_index(t_indexing *next, int *index, int nbr)
 
 t_stack	*lstnew_input(t_stack *prev)
 {
-	t_stack *new;
+	t_stack	*new;
 
 	new = malloc(sizeof(t_stack));
 	if (!new)

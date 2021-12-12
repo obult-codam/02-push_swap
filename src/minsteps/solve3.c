@@ -38,15 +38,15 @@ void	push_first_b(int range_start, int range_end, t_sort_data data)
 	i = 0;
 	while (i >= 0)
 	{
-		if (ft_offset_index(*data.top_a, -1 * i) <= range_end && 
-				ft_offset_index(*data.top_a, -1 * i) >= range_start)
+		if (ft_offset_index(*data.top_a, -1 * i) <= range_end
+			&& ft_offset_index(*data.top_a, -1 * i) >= range_start)
 		{
 			ft_revr_x(data.top_a, "rra", i);
 			ft_push(data.top_a, data.top_b, "pb");
 			return ;
 		}
-		else if (ft_offset_index(*data.top_a, i) <= range_end && 
-			ft_offset_index(*data.top_a, i) >= range_start)
+		else if (ft_offset_index(*data.top_a, i) <= range_end
+			&& ft_offset_index(*data.top_a, i) >= range_start)
 		{
 			ft_rotate_x(data.top_a, "ra", i);
 			ft_push(data.top_a, data.top_b, "pb");

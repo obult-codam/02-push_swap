@@ -16,14 +16,12 @@ void	ft_sort_mid(t_sort_data data)
 	if (data.size % 3)
 		p = 1;
 	data.size = data.size / 3 + p;
-	// data.size = data.size * 2 / 3 - data.size / 3;
 	ft_sort_b(data);
 }
 
 void	ft_sort_max(t_sort_data data)
 {
 	data.size = data.size / 3 + data.size % 3 / 2;
-	// data.size = data.size - (data.size * 2 / 3);
 	ft_sort(data);
 }
 
@@ -44,7 +42,7 @@ int	get_min(int size, t_stack *start)
 	return (min);
 }
 
-t_stack		*ft_get_bottom_offset(t_stack *start, int offset)
+t_stack	*ft_get_bottom_offset(t_stack *start, int offset)
 {
 	int	i;
 

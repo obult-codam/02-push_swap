@@ -4,7 +4,7 @@
 void	ft_push(t_stack **origin, t_stack **dest, char *msg)
 {
 	t_stack	*og_cpy;
- 
+
 	og_cpy = *origin;
 	(og_cpy->prev)->next = og_cpy->next;
 	(og_cpy->next)->prev = og_cpy->prev;
@@ -44,7 +44,7 @@ void	ft_bottom_push_a(t_stack **org, t_stack **dst)
 
 void	ft_bottom_push_ax(t_stack **org, t_stack **dst, int x)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < x)
@@ -56,7 +56,7 @@ void	ft_bottom_push_ax(t_stack **org, t_stack **dst, int x)
 
 void	ft_bottom_push_bx(t_stack **org, t_stack **dst, int x)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < x)

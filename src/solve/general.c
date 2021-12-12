@@ -52,8 +52,6 @@ void	ft_solve_4a(t_sort_data data)
 		ft_revr_x(data.top_a, "rra", 1);
 		ft_hustle(data);
 		return ;
-		// write(1, "bar", 3);
-		// ra ra sa rra rra
 	}
 	else if (ft_offset_index(*data.top_a, 1) == max)
 	{
@@ -62,13 +60,9 @@ void	ft_solve_4a(t_sort_data data)
 		ft_rotate(data.top_a, "ra");
 		ft_hustle(data);
 		ft_revr_x(data.top_a, "rra", 2);
-		// ft_solve_3a(data);
-		// write(1, "nin", 3);
-		// ra sa ra sa rra rra
 	}
 	else if ((*data.top_a)->index == max)
 	{
-		// pb ra ra ra pa rra rra rra
 		ft_push(data.top_a, data.top_b, "pb");
 		ft_hustle(data);
 		ft_rotate_x(data.top_a, "ra", 3);
@@ -78,7 +72,6 @@ void	ft_solve_4a(t_sort_data data)
 		ft_revr_x(data.top_a, "rra", 1);
 		ft_hustle(data);
 		return ;
-		// write(1, "faa", 3);
 	}
 	ft_solve_3a(data);
 }

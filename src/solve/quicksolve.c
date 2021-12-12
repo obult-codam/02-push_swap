@@ -37,7 +37,7 @@ int	ft_send_2ba(t_sort_data data)
 	{
 		if (i - r == 2)
 			break ;
-		if ((*data.top_b)->index >= max -1)
+		if ((*data.top_b)->index >= max - 1)
 		{
 			ft_push(data.top_b, data.top_a, "pa");
 			ft_hustle(data);
@@ -55,7 +55,7 @@ int	ft_send_2ba(t_sort_data data)
 void	ft_solve_on_b(t_sort_data data)
 {
 	int	r;
-	
+
 	while (data.size)
 	{
 		if (data.size > 1)
@@ -72,15 +72,15 @@ void	ft_solve_on_b(t_sort_data data)
 	}
 }
 
-int		push_one_a(int range_start, int range_end, t_sort_data data)
+int	push_one_a(int range_start, int range_end, t_sort_data data)
 {
 	int	i;
 
 	i = 0;
 	while (i >= 0)
 	{
-		if (ft_offset_index(*data.top_b, -1 * i) <= range_end && 
-				ft_offset_index(*data.top_b, -1 * i) >= range_start)
+		if (ft_offset_index(*data.top_b, -1 * i) <= range_end
+			&& ft_offset_index(*data.top_b, -1 * i) >= range_start)
 		{
 			ft_revr_x(data.top_b, "rrb", i);
 			ft_push(data.top_b, data.top_a, "pa");
@@ -88,8 +88,8 @@ int		push_one_a(int range_start, int range_end, t_sort_data data)
 				return (1);
 			return (0);
 		}
-		else if (ft_offset_index(*data.top_b, i) <= range_end && 
-			ft_offset_index(*data.top_b, i) >= range_start)
+		else if (ft_offset_index(*data.top_b, i) <= range_end
+			&& ft_offset_index(*data.top_b, i) >= range_start)
 		{
 			ft_rotate_x(data.top_b, "rb", i);
 			ft_push(data.top_b, data.top_a, "pa");
