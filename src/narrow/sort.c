@@ -36,9 +36,13 @@ void	ft_sort(t_sort_data data)
 void	split_in_groups(t_sort_data data)
 {
 	int	i;
+	int	p;
 	int	min;
 
 	i = 0;
+	p = 0;
+	if (data.size % 3)
+		p = 1;
 	min = get_min(data.size, *data.top_a);
 	while (i < data.size)
 	{
@@ -47,7 +51,7 @@ void	split_in_groups(t_sort_data data)
 			ft_push(data.top_a, data.top_b, "pb");
 			ft_rotate(data.top_b, "rb");
 		}
-		else if ((*data.top_a)->index < (min + (data.size * 2) / 3))
+		else if ((*data.top_a)->index < (min + data.size / 3 * 2 + p))
 		{
 			ft_push(data.top_a, data.top_b, "pb");
 		}
@@ -57,5 +61,5 @@ void	split_in_groups(t_sort_data data)
 		}
 		i++;
 	}
-	ft_revr_x(data.top_a, "rra", data.size - (data.size * 2) / 3);
+	ft_revr_x(data.top_a, "rra", data.size / 3 + data.size % 3 / 2);
 }

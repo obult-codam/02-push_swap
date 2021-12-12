@@ -9,9 +9,9 @@ void	ft_solve_on_a(t_sort_data data)
 		ft_solve_2a(data);
 	if (data.size == 3)
 		ft_solve_3a(data);
-	if (data.size == 4)
-		ft_solve_4a(data);
-	if (data.size > 4)
+	// if (data.size == 4)
+	// 	ft_solve_4a(data);
+	if (data.size > 3)
 	{
 		ft_swapsort(data);
 	}
@@ -42,7 +42,6 @@ void	ft_solve_4a(t_sort_data data)
 
 	min = get_min(data.size, *data.top_a);
 	max = min + data.size - 1;
-	// write(1, "foo", 3);
 	if (ft_offset_index(*data.top_a, 2) == max)
 	{
 		ft_hustle(data);

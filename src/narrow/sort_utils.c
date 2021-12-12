@@ -4,22 +4,26 @@
 void	ft_sort_min(t_sort_data data)
 {
 	data.size = data.size / 3;
-	// data.start = ft_get_bottom_offset(*data.top_b, data.size);
 	ft_revr_x(data.top_b, "rrb", data.size);
 	ft_sort_b(data);
 }
 
 void	ft_sort_mid(t_sort_data data)
 {
-	data.size = data.size * 2 / 3 - data.size / 3;
-	// data.start = *data.top_b;
+	int	p;
+
+	p = 0;
+	if (data.size % 3)
+		p = 1;
+	data.size = data.size / 3 + p;
+	// data.size = data.size * 2 / 3 - data.size / 3;
 	ft_sort_b(data);
 }
 
 void	ft_sort_max(t_sort_data data)
 {
-	data.size = data.size - (data.size * 2 / 3);
-	// data.start = *data.top_a;
+	data.size = data.size / 3 + data.size % 3 / 2;
+	// data.size = data.size - (data.size * 2 / 3);
 	ft_sort(data);
 }
 

@@ -108,7 +108,9 @@ void	ft_push_fast_first (t_sort_data data, int size, int min)
 
 	high = min + size - 1;
 	if (size == 1)
+	{
 		push_one_a(min, min, data);
+	}
 	else if (push_one_a(high - 1, high, data))
 	{
 		high--;
@@ -118,7 +120,7 @@ void	ft_push_fast_first (t_sort_data data, int size, int min)
 	{
 		push_one_a(high, high, data);
 		ft_hustle(data);
-		if (size == 2)
+		if (size <= 2)
 			return ;
 		ft_push_fast_first(data, size - 2, min);
 	}

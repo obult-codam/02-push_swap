@@ -13,7 +13,7 @@ void	ft_split_in_two(t_sort_data data)
 	min = get_min(data.size, *data.top_b);
 	while (i < data.size)
 	{
-		if ((*data.top_b)->index < (min + (data.size / 2)))
+		if ((*data.top_b)->index < (min + data.size / 2 - 1))
 		{
 			ft_rotate(data.top_b, "rb");
 		}
@@ -23,10 +23,10 @@ void	ft_split_in_two(t_sort_data data)
 		}
 		i++;
 	}
-	ft_revr_x(data.top_b, "rrb", data.size / 2);
-	data.size = (size - (size / 2));
+	ft_revr_x(data.top_b, "rrb", data.size / 2 - 1);
+	data.size = size / 2 + size % 2 + 1;
 	ft_sort(data);
-	data.size = (size / 2);
+	data.size = size / 2 - 1;
 	ft_sort_b(data);
 }
 
@@ -41,7 +41,7 @@ void	ft_medium_size_a(t_sort_data data)
 	min = get_min(data.size, *data.top_a);
 	while (i < data.size)
 	{
-		if ((*data.top_a)->index < (min + data.size / 2))
+		if ((*data.top_a)->index < (min + data.size / 2 + 1 + data.size % 2))
 		{
 			ft_push(data.top_a, data.top_b, "pb");
 		}
@@ -51,9 +51,9 @@ void	ft_medium_size_a(t_sort_data data)
 		}
 		i++;
 	}
-	ft_revr_x(data.top_a, "rra", size - (size / 2));
-	data.size = size - (size / 2);
+	ft_revr_x(data.top_a, "rra", size / 2 - 1);
+	data.size = size / 2 - 1;
 	ft_sort(data);
-	data.size = size / 2;
+	data.size = size / 2 + 1 + size % 2;
 	ft_sort_b(data);
 }
