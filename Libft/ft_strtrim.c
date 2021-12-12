@@ -6,15 +6,15 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:20:07 by obult         #+#    #+#                 */
-/*   Updated: 2020/12/08 01:53:49 by oswin         ########   odam.nl         */
+/*   Updated: 2021/12/12 17:41:56 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		inset(char c, char *set)
+static int	inset(char c, char *set)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (set[i])
@@ -26,7 +26,7 @@ static int		inset(char c, char *set)
 	return (0);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*result;
 	int		len;

@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/14 15:04:06 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/19 14:14:11 by obult         ########   odam.nl         */
+/*   Updated: 2021/12/12 17:37:58 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **	variable ’next’ is initialized to NULL.
 */
 
-t_list		*ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*n_list;
 

@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:19:59 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/21 00:42:48 by oswin         ########   odam.nl         */
+/*   Updated: 2021/12/12 17:41:41 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned int		len;
-	unsigned int		i;
-	char				*result;
+	unsigned int	len;
+	unsigned int	i;
+	char			*result;
 
 	if (!s)
 		return (0);

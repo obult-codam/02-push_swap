@@ -1,8 +1,8 @@
 #include "libft.h"
 
-static int		ft_strclen(char *s, char c)
+static int	ft_strclen(char *s, char c)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	if (!s)
@@ -14,7 +14,7 @@ static int		ft_strclen(char *s, char c)
 
 static int	os_cpy(char *dst, char *src, int c)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (src[i] && src[i] != (char)c)
@@ -47,7 +47,7 @@ static char	*ft_addington(char *og, char *add)
 	return (temp);
 }
 
-static int		bufferfix(char *buff, int lenflag)
+static int	bufferfix(char *buff, int lenflag)
 {
 	char	*temp;
 
@@ -62,7 +62,7 @@ static int		bufferfix(char *buff, int lenflag)
 	return (1);
 }
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	int				len;
 	static char		buff[BUFFER_SIZE + 1];

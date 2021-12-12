@@ -6,13 +6,13 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:22:12 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/14 14:09:00 by obult         ########   odam.nl         */
+/*   Updated: 2021/12/12 17:37:50 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 

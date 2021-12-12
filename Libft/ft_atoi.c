@@ -6,11 +6,11 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:18:01 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/15 20:55:35 by obult         ########   odam.nl         */
+/*   Updated: 2021/12/12 17:38:03 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int		charcheck(char tch, char *check)
+static int	charcheck(char tch, char *check)
 {
 	if (!(*check))
 		return (0);
@@ -19,7 +19,7 @@ static int		charcheck(char tch, char *check)
 	return (charcheck(tch, check + 1));
 }
 
-int				ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int		i;
 	int		plus;

@@ -6,13 +6,13 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:18:12 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/21 00:24:21 by oswin         ########   odam.nl         */
+/*   Updated: 2021/12/12 17:38:02 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void		ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	while (n)
 	{

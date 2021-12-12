@@ -6,20 +6,20 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 21:16:23 by obult         #+#    #+#                 */
-/*   Updated: 2021/10/27 15:56:31 by obult         ########   odam.nl         */
+/*   Updated: 2021/12/12 17:37:11 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			ft_strclen(const char *str, char c)
+static int	ft_strclen(const char *str, char c)
 {
 	if (*str && *str != c)
 		return (1 + ft_strclen(str + 1, c));
 	return (0);
 }
 
-int					count_words(char *str, char c, int wrds)
+int	count_words(char *str, char c, int wrds)
 {
 	while (*str)
 	{
@@ -30,7 +30,7 @@ int					count_words(char *str, char c, int wrds)
 	return (wrds);
 }
 
-static void			ft_freeer(char **pnt, int i)
+static void	ft_freeer(char **pnt, int i)
 {
 	while (i)
 	{
@@ -40,7 +40,7 @@ static void			ft_freeer(char **pnt, int i)
 	free(pnt);
 }
 
-static char			**arrange(char **pnt, const char *s, char c)
+static char	**arrange(char **pnt, const char *s, char c)
 {
 	int		i;
 
@@ -65,7 +65,7 @@ static char			**arrange(char **pnt, const char *s, char c)
 	return (pnt);
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**pnts;
 	int		words;

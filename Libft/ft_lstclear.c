@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/14 15:10:25 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/15 17:19:34 by obult         ########   odam.nl         */
+/*   Updated: 2021/12/12 17:37:28 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **	NULL.
 */
 
-void		ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list		*temp;
 

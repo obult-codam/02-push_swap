@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 17:16:27 by obult         #+#    #+#                 */
-/*   Updated: 2021/10/27 16:16:43 by obult         ########   odam.nl         */
+/*   Updated: 2021/12/12 17:43:16 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #  define BUFFER_SIZE 10
 # endif
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -68,9 +68,9 @@ void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-	void (*del)(void *));
+					void (*del)(void *));
 int				get_next_line(int fd, char **line);
 
-void	add_printarray_fd(char **arr, int fd);
+void			add_printarray_fd(char **arr, int fd);
 
 #endif

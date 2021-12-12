@@ -6,11 +6,11 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 22:20:48 by obult         #+#    #+#                 */
-/*   Updated: 2020/11/20 11:08:35 by oswin         ########   odam.nl         */
+/*   Updated: 2021/12/12 17:37:37 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	return (c <= 126 && c >= 32);
 }
