@@ -4,7 +4,8 @@ SRC_S	= main.c \
 			src/actions/push.c src/actions/rotate.c src/actions/swap.c \
 			src/narrow/sort.c src/narrow/sort_b.c src/narrow/sort_utils.c src/narrow/split_two.c\
 			src/solve/general.c src/solve/quicksolve.c\
-			src/minsteps/is_sorted.c src/minsteps/solve3.c
+			src/minsteps/is_sorted.c src/minsteps/solve3.c\
+			src/input/ft_atoi.c
 OBJ	= ${SRC_S:.c=.o}
 CC		= gcc
 RM		= rm -f

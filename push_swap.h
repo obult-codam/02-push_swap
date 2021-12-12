@@ -92,4 +92,6 @@ void	ft_medium_size_a(t_sort_data data);
 
 void	ft_fast_five_b (t_sort_data data);
 
+int				fo_atoi(const char *nptr, int *error);
+
 #endif

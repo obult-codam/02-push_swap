@@ -5,6 +5,7 @@
 int	ft_index_list(int argc, char **argv, t_stack **list, t_indexing **indexing)
 {
 	int	i;
+	int	atoi_error;
 	t_stack	*save;
 	t_stack	**store;
 
@@ -19,10 +20,10 @@ int	ft_index_list(int argc, char **argv, t_stack **list, t_indexing **indexing)
 			save = lstadd_input(*list);
 			list = &save;
 		}
-		if (!*list || !lstadd_index(indexing, &((*list)->index), ft_atoi(argv[i])))
-		{
+		if (!*list || !lstadd_index(indexing, &((*list)->index), fo_atoi(argv[i], &atoi_error)))
 			return(0);
-		}
+		if (atoi_error == 0)
+			return (0);
 		i++;
 	}
 	set_index(*indexing);

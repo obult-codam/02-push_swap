@@ -1,4 +1,5 @@
 #include "libft.h"
+#include "push_swap.h"
 
 static int	charcheck(char tch, char *check)
 {
@@ -26,10 +27,15 @@ int	check_just_min(char *arg)
 int	is_sorted(int argc, char **argv)
 {
 	int	i;
+	int	error;
 
 	i = 1;
+	if (!fo_atoi(argv[i], &error))
+		return (-1);
 	while (i < argc - 1)
 	{
+		if (!fo_atoi(argv[i + 1], &error))
+			return (-1);
 		if (ft_atoi(argv[i]) >= ft_atoi(argv[i + 1]))
 			return (0);
 		if (check_just_min(argv[i]))
