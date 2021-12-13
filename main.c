@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   main.c                                             :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: oswin <oswin@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/13 19:28:40 by oswin         #+#    #+#                 */
+/*   Updated: 2021/12/13 19:37:10 by oswin         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "push_swap.h"
 
@@ -23,11 +35,7 @@ int	main(int argc, char **argv)
 		nuke_all(list, NULL, indexing);
 		return (1);
 	}
-	else
-	{
-		ft_sort_parent(&list, argc - 1);
-		// write_list_nbr(list, 0);
-		nuke_all(list, NULL, indexing);
-	}
+	ft_sort_parent(&list, argc - 1);
+	nuke_all(list, NULL, indexing);
 	return (0);
 }

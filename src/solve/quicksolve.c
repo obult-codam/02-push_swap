@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   quicksolve.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: oswin <oswin@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/13 19:32:07 by oswin         #+#    #+#                 */
+/*   Updated: 2021/12/13 19:35:01 by oswin         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include "libft.h"
 
@@ -81,7 +93,7 @@ int	push_one_a(int range_start, int range_end, t_sort_data data)
 	}
 }
 
-void	ft_push_fast_first (t_sort_data data, int size, int min)
+void	ft_push_fast_first(t_sort_data data, int size, int min)
 {
 	int	high;
 

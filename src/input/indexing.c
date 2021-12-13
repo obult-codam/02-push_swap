@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   indexing.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: oswin <oswin@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/13 19:30:55 by oswin         #+#    #+#                 */
+/*   Updated: 2021/12/13 19:35:25 by oswin         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "push_swap.h"
 
@@ -26,7 +38,7 @@ t_indexing	*lstadd_index(t_indexing **lst, int *index, int nbr)
 {
 	while (*lst && (*lst)->nbr < nbr)
 	{
-		 lst = &((*lst)->next);
+		lst = &((*lst)->next);
 	}
 	if (*lst && (*lst)->nbr == nbr)
 		return (NULL);
