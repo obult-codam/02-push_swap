@@ -1,27 +1,6 @@
 #include "push_swap.h"
 #include "libft.h"
 
-void	ft_hustle(t_sort_data data)
-{
-	if (*data.top_b == NULL)
-		ft_solve_2a(data);
-	else if ((*data.top_a)->index > (*data.top_a)->next->index)
-	{
-		if ((*data.top_b)->index < (*data.top_b)->next->index)
-		{
-			ft_swap(*data.top_a);
-			ft_swap(*data.top_b);
-			ft_putendl_fd("ss", 1);
-		}
-		else
-			ft_swap_a(*data.top_a);
-	}
-	else if ((*data.top_b)->index < (*data.top_b)->next->index)
-	{
-		ft_swap_b(*data.top_b);
-	}
-}
-
 int	ft_send_2ba(t_sort_data data)
 {
 	int	i;
@@ -70,12 +49,15 @@ void	ft_solve_on_b(t_sort_data data)
 	}
 }
 
+// could do function below with recursively growing int i; if needed 
+// to make shorter would skip while loop
+
 int	push_one_a(int range_start, int range_end, t_sort_data data)
 {
 	int	i;
 
 	i = 0;
-	while (i >= 0)
+	while (1)
 	{
 		if (ft_offset_index(*data.top_b, -1 * i) <= range_end
 			&& ft_offset_index(*data.top_b, -1 * i) >= range_start)
@@ -97,7 +79,6 @@ int	push_one_a(int range_start, int range_end, t_sort_data data)
 		}
 		i++;
 	}
-	return (-1);
 }
 
 void	ft_push_fast_first (t_sort_data data, int size, int min)

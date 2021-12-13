@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		ft_sort_parent(&list, argc - 1); 
+		ft_sort_parent(&list, argc - 1);
 		// write_list_nbr(list, 0);
 		nuke_all(list, NULL, indexing);
 	}

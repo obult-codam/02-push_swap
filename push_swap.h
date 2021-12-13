@@ -21,7 +21,6 @@ typedef struct s_sort_data
 {
 	t_stack		**top_a;
 	t_stack		**top_b;
-	t_stack		*start;
 	int			size;
 }	t_sort_data;
 
