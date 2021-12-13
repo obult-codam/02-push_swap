@@ -1,5 +1,4 @@
 #include "push_swap.h"
-#include <unistd.h>
 
 void	ft_solve_on_a(t_sort_data data)
 {
@@ -9,12 +8,8 @@ void	ft_solve_on_a(t_sort_data data)
 		ft_solve_2a(data);
 	if (data.size == 3)
 		ft_solve_3a(data);
-	// if (data.size == 4)
-	// 	ft_solve_4a(data);
 	if (data.size > 3)
-	{
 		ft_swapsort(data);
-	}
 }
 
 void	ft_solve_2a(t_sort_data data)
@@ -35,43 +30,28 @@ void	ft_solve_3a(t_sort_data data)
 	ft_hustle(data);
 }
 
-void	ft_solve_4a(t_sort_data data)
+void	ft_swapsort(t_sort_data data)
 {
-	int	min;
-	int	max;
+	if (data.size < 4)
+	{
+		ft_solve_3a(data);
+		return ;
+	}
+	ft_hustle(data);
+	ft_swapsolve(data);
+	data.size = data.size - 1;
+	ft_swapsort(data);
+}
 
-	min = get_min(data.size, *data.top_a);
-	max = min + data.size - 1;
-	if (ft_offset_index(*data.top_a, 2) == max)
-	{
-		ft_hustle(data);
-		ft_rotate_x(data.top_a, "ra", 2);
-		ft_hustle(data);
-		ft_revr_x(data.top_a, "rra", 1);
-		ft_hustle(data);
-		ft_revr_x(data.top_a, "rra", 1);
-		ft_hustle(data);
-		return ;
-	}
-	else if (ft_offset_index(*data.top_a, 1) == max)
+void	ft_swapsolve(t_sort_data data)
+{
+	if (data.size - 2 > 0)
 	{
 		ft_rotate(data.top_a, "ra");
 		ft_hustle(data);
-		ft_rotate(data.top_a, "ra");
+		data.size = data.size - 1;
+		ft_swapsolve(data);
+		ft_rev_rotate(data.top_a, "rra");
 		ft_hustle(data);
-		ft_revr_x(data.top_a, "rra", 2);
 	}
-	else if ((*data.top_a)->index == max)
-	{
-		ft_push(data.top_a, data.top_b, "pb");
-		ft_hustle(data);
-		ft_rotate_x(data.top_a, "ra", 3);
-		ft_push(data.top_b, data.top_a, "pa");
-		ft_revr_x(data.top_a, "rra", 2);
-		ft_hustle(data);
-		ft_revr_x(data.top_a, "rra", 1);
-		ft_hustle(data);
-		return ;
-	}
-	ft_solve_3a(data);
 }

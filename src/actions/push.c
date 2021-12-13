@@ -28,30 +28,10 @@ void	ft_push(t_stack **origin, t_stack **dest, char *msg)
 		*origin = NULL;
 }
 
-// from stack A to stack B is "pb"
-
 void	ft_bottom_push_b(t_stack **org, t_stack **dst)
 {
 	ft_rev_rotate(org, "rra");
 	ft_push(org, dst, "pb");
-}
-
-void	ft_bottom_push_a(t_stack **org, t_stack **dst)
-{
-	ft_rev_rotate(org, "rrb");
-	ft_push(org, dst, "pa");
-}
-
-void	ft_bottom_push_ax(t_stack **org, t_stack **dst, int x)
-{
-	int	i;
-
-	i = 0;
-	while (i < x)
-	{
-		ft_bottom_push_a(org, dst);
-		i++;
-	}
 }
 
 void	ft_bottom_push_bx(t_stack **org, t_stack **dst, int x)

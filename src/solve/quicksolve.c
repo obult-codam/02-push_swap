@@ -1,7 +1,5 @@
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
-#include <unistd.h> 
 
 void	ft_hustle(t_sort_data data)
 {

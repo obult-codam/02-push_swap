@@ -1,6 +1,5 @@
 #include "push_swap.h"
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_sort_b(t_sort_data data)
 {

@@ -52,13 +52,9 @@ void	split_in_groups(t_sort_data data)
 			ft_rotate(data.top_b, "rb");
 		}
 		else if ((*data.top_a)->index < (min + data.size / 3 * 2 + p))
-		{
 			ft_push(data.top_a, data.top_b, "pb");
-		}
 		else
-		{
 			ft_rotate(data.top_a, "ra");
-		}
 		i++;
 	}
 	ft_revr_x(data.top_a, "rra", data.size / 3 + data.size % 3 / 2);

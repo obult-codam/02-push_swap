@@ -1,35 +1,16 @@
 #include "libft.h"
 #include "push_swap.h"
 
-// better name for input functions (stack or something else?)
 int	ft_index_list(int argc, char **argv, t_stack **list, t_indexing **indexing)
 {
-	int		i;
-	int		atoi_error;
-	t_stack	*save;
-	t_stack	**store;
+	t_stack	*end;
 
-	i = 1;
-	store = list;
-	while (i < argc)
-	{
-		if (i == 1)
-			*list = lstadd_input(*list);
-		else
-		{
-			save = lstadd_input(*list);
-			list = &save;
-		}
-		if (!*list || !lstadd_index(indexing, &((*list)->index),
-				fo_atoi(argv[i], &atoi_error)))
-			return (0);
-		if (atoi_error == 0)
-			return (0);
-		i++;
-	}
+	end = ft_add_to_lst(argc, argv, list, indexing);
+	if (!end)
+		return (0);
 	set_index(*indexing);
-	(*store)->prev = save;
-	(*list)->next = *store;
+	(*list)->prev = end;
+	end->next = *list;
 	return (1);
 }
 

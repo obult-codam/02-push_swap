@@ -32,6 +32,9 @@ t_stack		*lstnew_input(t_stack *prev);
 t_indexing	*lstadd_index(t_indexing **lst, int *index, int nbr);
 t_indexing	*lstnew_index(t_indexing *next, int *index, int nbr);
 
+t_stack		*ft_add_to_lst(int argc, char **argv, t_stack **list,
+				t_indexing **idx);
+
 void		set_index(t_indexing *indexing);
 
 int			nuke_all(t_stack *a_stack, t_stack *b_stack, t_indexing *indexing);

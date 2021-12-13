@@ -1,6 +1,4 @@
 #include "push_swap.h"
-#include <stdio.h>
-#include <unistd.h>
 
 void	ft_split_in_two(t_sort_data data)
 {
