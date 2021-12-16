@@ -5,7 +5,12 @@ SRC_S	= main.c \
 			../src/minsteps/is_sorted.c\
 			../src/input/ft_atoi.c\
 			do_push.c do_swap.c do_rotate.c do_rev_rotate.c\
-			execute_step.c check_series.c
+			execute_step.c check_series.c\
+			\
+			../src/narrow/sort.c ../src/narrow/sort_b.c\
+			../src/narrow/sort_utils.c ../src/narrow/split_two.c\
+			../src/solve/general.c ../src/solve/quicksolve.c\
+			../src/minsteps/solve3.c
 OBJ	= ${SRC_S:.c=.o}
 CC		= gcc
 RM		= rm -f
@@ -23,11 +28,15 @@ clean:
 
 fclean:		clean
 				@${RM} ${NAME} \
-				$(info ************  checker Removed) \
+				$(info ************  checker Removed)
 
 re:			fclean all
 
-${NAME}:	${OBJ}
-				${CC} -o $@ $^ 
+${NAME}:	${OBJ} ../Libft/libft.a
+				@${CC} -o $@ $^ \
+				$(info ************  checker Ready!)
 
-.PHONY: all clean fclean re libft
+../Libft/libft.a:
+				@${MAKE} -C Libft --no-print-directory
+
+.PHONY: all clean fclean re

@@ -10,7 +10,7 @@ OBJ	= ${SRC_S:.c=.o}
 CC		= gcc
 RM		= rm -f
 HEADER	= -I Libft/
-CFLAGS	= -Wall -Werror -Wextra -g #-fsanitize=address
+CFLAGS	= -Wall -Werror -Wextra -g
 
 all:		${NAME}
 
@@ -33,7 +33,7 @@ re:			fclean all
 
 ${NAME}:	${OBJ} Libft/libft.a
 				@${CC} -o $@ $^ \
-				$(info ************  push_swap ready!)
+				$(info ************  push_swap Ready!)
 
 Libft/libft.a:
 				@${MAKE} -C Libft --no-print-directory
