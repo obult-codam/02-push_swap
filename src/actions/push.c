@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 19:30:22 by oswin         #+#    #+#                 */
-/*   Updated: 2021/12/13 19:30:23 by oswin         ########   odam.nl         */
+/*   Updated: 2021/12/16 18:08:51 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,13 @@ void	ft_push(t_stack **origin, t_stack **dest, char *msg)
 		og_cpy->next = og_cpy;
 		og_cpy->prev = og_cpy;
 	}
-	ft_putendl_fd(msg, 1);
+	if (msg != NULL)
+		ft_putendl_fd(msg, 1);
 	if (*origin == *dest)
 		*origin = NULL;
 }
 
-void	ft_bottom_push_b(t_stack **org, t_stack **dst)
+static void	ft_bottom_push_b(t_stack **org, t_stack **dst)
 {
 	ft_rev_rotate(org, "rra");
 	ft_push(org, dst, "pb");

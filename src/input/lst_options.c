@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 19:31:03 by oswin         #+#    #+#                 */
-/*   Updated: 2021/12/13 19:31:06 by oswin         ########   odam.nl         */
+/*   Updated: 2021/12/16 15:02:42 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	set_index(t_indexing *indexing)
 	}
 }
 
-void	nuke_stack(t_stack *stack)
+static void	nuke_stack(t_stack *stack)
 {
 	t_stack	*tmp;
 
@@ -67,12 +67,11 @@ void	nuke_stack(t_stack *stack)
 	}
 }
 
-int	nuke_all(t_stack *a_stack, t_stack *b_stack, t_indexing *indexing)
+int	nuke_all(t_stack *a_stack, t_indexing *indexing)
 {
 	void	*tmp;
 
 	nuke_stack(a_stack);
-	nuke_stack(b_stack);
 	while (indexing)
 	{
 		tmp = indexing->next;

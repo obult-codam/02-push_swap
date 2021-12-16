@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 19:31:10 by oswin         #+#    #+#                 */
-/*   Updated: 2021/12/13 19:31:11 by oswin         ########   odam.nl         */
+/*   Updated: 2021/12/16 15:36:16 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	charcheck(char tch, char *check)
 	return (charcheck(tch, check + 1));
 }
 
-int	check_just_min(char *arg)
+static int	check_just_min(char *arg)
 {
 	int	i;
 

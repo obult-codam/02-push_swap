@@ -6,7 +6,7 @@
 /*   By: oswin <oswin@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/13 19:30:29 by oswin         #+#    #+#                 */
-/*   Updated: 2021/12/13 19:30:30 by oswin         ########   odam.nl         */
+/*   Updated: 2021/12/16 18:15:40 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 void	ft_rotate(t_stack **r, char *msg)
 {
 	*r = (*r)->next;
-	ft_putendl_fd(msg, 1);
+	if (msg != NULL)
+		ft_putendl_fd(msg, 1);
 }
 
 void	ft_rotate_x(t_stack **r, char *msg, int rotations)
@@ -36,7 +37,8 @@ void	ft_rotate_x(t_stack **r, char *msg, int rotations)
 void	ft_rev_rotate(t_stack **r, char *msg)
 {
 	*r = (*r)->prev;
-	ft_putendl_fd(msg, 1);
+	if (msg != NULL)
+		ft_putendl_fd(msg, 1);
 }
 
 void	ft_revr_x(t_stack **r, char *msg, int rotations)
