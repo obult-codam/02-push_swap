@@ -6,7 +6,7 @@
 /*   By: obult <obult@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/16 18:13:43 by obult         #+#    #+#                 */
-/*   Updated: 2021/12/16 18:55:57 by obult         ########   odam.nl         */
+/*   Updated: 2021/12/16 20:04:08 by obult         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 int	ft_do_rra(t_sort_data data)
 {
-	ft_rev_rotate(data.top_a, NULL);
+	if (*data.top_a)
+		ft_rev_rotate(data.top_a, NULL);
 	return (0);
 }
 
 int	ft_do_rrb(t_sort_data data)
 {
-	ft_rev_rotate(data.top_b, NULL);
+	if (*data.top_b)
+		ft_rev_rotate(data.top_b, NULL);
 	return (0);
 }
 int	ft_do_rrr(t_sort_data data)
 {
-	ft_rev_rotate(data.top_a, NULL);
-	ft_rev_rotate(data.top_b, NULL);
+	if (*data.top_a)
+		ft_rev_rotate(data.top_a, NULL);
+	if (*data.top_b)
+		ft_rev_rotate(data.top_b, NULL);
 	return (0);
 }

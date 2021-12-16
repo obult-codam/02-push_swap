@@ -39,6 +39,6 @@ Libft/libft.a:
 				@${MAKE} -C Libft --no-print-directory
 
 checker:
-				@${MAKE} -C checker --no-print-directory
+				@${MAKE} -C Checker --no-print-directory
 
 .PHONY: all clean fclean re libft
