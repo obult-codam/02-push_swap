@@ -15,7 +15,7 @@ OBJ	= ${SRC_S:.c=.o}
 CC		= gcc
 RM		= rm -f
 HEADER	= -I ../Libft/
-CFLAGS	= -Wall -Werror -Wextra -g
+CFLAGS	= -Wall -Werror -Wextra
 
 all:		${NAME}
 
@@ -37,6 +37,6 @@ ${NAME}:	${OBJ} ../Libft/libft.a
 				$(info ************  checker Ready!)
 
 ../Libft/libft.a:
-				@${MAKE} -C Libft --no-print-directory
+				@${MAKE} -C ../Libft --no-print-directory
 
 .PHONY: all clean fclean re
