@@ -1,8 +1,21 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: obult <obult@student.codam.nl>               +#+                      #
+#                                                    +#+                       #
+#    Created: 2021/12/17 17:07:06 by obult         #+#    #+#                  #
+#    Updated: 2021/12/17 17:07:12 by obult         ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	= push_swap
 SRC_S	= main.c \
 			src/input/indexing.c src/input/lst_options.c \
 			src/actions/push.c src/actions/rotate.c src/actions/swap.c \
-			src/narrow/sort.c src/narrow/sort_b.c src/narrow/sort_utils.c src/narrow/split_two.c\
+			src/narrow/sort.c src/narrow/sort_b.c src/narrow/sort_utils.c \
+			src/narrow/split_two.c\
 			src/solve/general.c src/solve/quicksolve.c\
 			src/minsteps/is_sorted.c src/minsteps/solve3.c\
 			src/input/ft_atoi.c

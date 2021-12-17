@@ -1,7 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: obult <obult@student.codam.nl>               +#+                      #
+#                                                    +#+                       #
+#    Created: 2021/12/17 17:07:25 by obult         #+#    #+#                  #
+#    Updated: 2021/12/17 17:07:39 by obult         ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	= checker
 SRC_S	= main.c \
 			../src/input/indexing.c ../src/input/lst_options.c \
-			../src/actions/push.c ../src/actions/rotate.c ../src/actions/swap.c \
+			../src/actions/push.c ../src/actions/rotate.c\
+			../src/actions/swap.c \
 			../src/minsteps/is_sorted.c\
 			../src/input/ft_atoi.c\
 			do_push.c do_swap.c do_rotate.c do_rev_rotate.c\
