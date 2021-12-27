@@ -21,9 +21,9 @@ int	main(int argc, char **argv)
 
 	indexing = 0;
 	list = 0;
-	if (argc < 2)
+	if (argc < 3)
 		return (0);
-	else if (is_sorted(argc, argv) == -1)
+	else if (is_sorted(argc, argv))
 	{
 		write(2, "Error\n", 6);
 		return (1);
@@ -44,6 +44,7 @@ void	ft_check_sorting(t_stack **stack_a, int size)
 	t_sort_data	data;
 	t_stack		*b;
 	char		*line;
+	int			check;
 
 	data.top_a = stack_a;
 	b = 0;
@@ -51,10 +52,13 @@ void	ft_check_sorting(t_stack **stack_a, int size)
 	data.size = size;
 	while (get_next_line(0, &line))
 	{
-		if (ft_check_line(data, line) == -1)
+		check = ft_check_line(data, line);
+		if (check < 0)
 			break ;
 	}
-	if (ft_check_sorted(data))
+	if (check == -2)
+		write(2, "Error\n", 6);
+	else if (ft_check_sorted(data))
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);

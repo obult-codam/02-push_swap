@@ -38,5 +38,5 @@ int	ft_check_line(t_sort_data data, char *line)
 		return (ft_do_rrb(data));
 	if (ft_memcmp(line, "rrr", 3) == 0)
 		return (ft_do_rrr(data));
-	return (-1);
+	return (-2);
 }

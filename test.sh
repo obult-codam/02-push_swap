@@ -10,8 +10,8 @@ for i in $(seq $1);
 do
 ARG="$(ruby -e "puts (1..$def).to_a.shuffle.join(' ')")"
 # ./push_swap $ARG | ./checker_Mac $ARG && ./push_swap $ARG | wc -l
-./push_swap $ARG | ./checker_os $ARG && ./push_swap $ARG | wc -l
-# ./push_swap $ARG | ./checker_linux $ARG && ./push_swap $ARG | wc -l
+# ./push_swap $ARG | ./checker_os $ARG && ./push_swap $ARG | wc -l
+./push_swap $ARG | ./checker_linux $ARG && ./push_swap $ARG | wc -l
 done
 
 # for i in $(seq $1);
