@@ -2,7 +2,7 @@
 
 CHECKER=./checker_Mac
 LOGFILE="args.log"
-ROUNDS=1
+ROUNDS=25
 
 orange() {
     local orange_color='\033[38;5;214m'  # ANSI escape code for orange color
