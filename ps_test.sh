@@ -14,7 +14,7 @@ orange() {
 
 # Function to print OK in green
 print_ok() {
-  echo -e "\033[32mOK\033[0m"
+  echo $1 -e "[\033[32mOK\033[0m] "
 }
 
 # Function to print KO in red and failed numbers
@@ -29,17 +29,17 @@ err_test() {
 		print_ko "$1"
 		exit 1
 	fi
-	print_ok
+	print_ok $2
 }
 
-# base test give "<number array>" as input
+# base test give "<number array>" as input add -n for no newline
 base_test() {
 	RES=$(./push_swap $1 | $CHECKER $1)
 	if [ "$RES" != "OK" ]; then
 		print_ko "$1"
 		exit 1
 	fi
-	print_ok
+	print_ok $2
 }
 
 # Test loop for 10 times
@@ -52,9 +52,11 @@ do_tests() {
 		if [ "$RES" != "OK" ]; then
 			print_ko "$ARG"
 			exit 1
+		elif [ i != $1 ]; then
+			print_ok -n
 		fi
 	done
-	print_ok
+	print_ok $3
 }
 
 operations_test() {
@@ -93,21 +95,21 @@ operations_test 500 $XTN
 
 # random tests
 orange "random tests"
-do_tests 1 42
-do_tests 1 139
-do_tests 1 64
-do_tests 1 33
-do_tests 1 92
-do_tests 1 99
-do_tests 1 512
+do_tests 1 42 -n
+do_tests 1 139 -n
+do_tests 1 64 -n
+do_tests 1 33 -n
+do_tests 1 92 -n
+do_tests 1 99 -n
+do_tests 1 512 -n
 do_tests 1 477
 
 # do the false input tests
 orange "false input tests"
-err_test "1 2 3 4 4"
-err_test "1a 3 9"
-err_test "a b c"
-err_test "-1 12 one 42"
+err_test "1 2 3 4 4" -n
+err_test "1a 3 9" -n
+err_test "a b c" -n
+err_test "-1 12 one 42" -n
 err_test "+0 -0"
 
 # perfectly fine input
