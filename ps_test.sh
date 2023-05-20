@@ -19,8 +19,11 @@ print_ok() {
 
 # Function to print KO in red and failed numbers
 print_ko() {
-  echo $2 -e "[\033[31mKO\033[0m] "
-  echo "Failed numbers: \"$1\"" >> "$LOGFILE"
+	echo $2 -e "[\033[31mKO\033[0m] "
+	echo "Failed numbers: \"$1\"" >> "$LOGFILE"
+	if $PIPELINE; then
+		exit 1
+	fi
 }
 
 err_test() {
@@ -81,6 +84,13 @@ operations_benchmark() {
 	echo "max operations for $1 at $LOOPS tries: $MAX"
 }
 
+# init
+if [ "$1" = "--pipeline" ] || [ "$1" = "-P" ]; then
+    PIPELINE=true
+else
+    PIPELINE=false
+fi
+
 # Start of testing script
 for ((j=1; j<=6; j++)); do
 	orange "tests for $j numbers"
@@ -120,6 +130,7 @@ err_test "+0 -0"
 # perfectly fine input
 orange "perfectly fine input"
 base_test "-1 22 3"
+# base_test "wrong"
 
 # hand sorting impossible? try 10.000 args
 ARG="$(ruby -e "puts (1..10000).to_a.shuffle.join(' ')")"
