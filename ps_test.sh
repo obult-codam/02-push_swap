@@ -20,7 +20,7 @@ print_ok() {
 # Function to print KO in red and failed numbers
 print_ko() {
   echo $2 -e "[\033[31mKO\033[0m] "
-  echo "Failed numbers: $1" >> "$LOGFILE"
+  echo "Failed numbers: \"$1\"" >> "$LOGFILE"
 }
 
 err_test() {
@@ -43,8 +43,9 @@ base_test() {
 	RES=$(./push_swap $1 | $CHECKER $1)
 	if [ "$RES" != "OK" ]; then
 		print_ko "$1"
+	else
+		print_ok $2
 	fi
-	print_ok $2
 }
 
 # Test loop for 10 times
