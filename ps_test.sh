@@ -1,14 +1,14 @@
 #!/bin/bash
 
 CHECKER=./checker_Mac
-
-# extremeness, how many tests are done for checking amount of operations
-XTN=1
+LOGFILE="args.log"
+ROUNDS=1
 
 orange() {
     local orange_color='\033[38;5;214m'  # ANSI escape code for orange color
     local reset_color='\033[0m'           # ANSI escape code to reset color
 
+	echo
     echo -e "${orange_color}$1${reset_color}"
 }
 
@@ -80,18 +80,18 @@ operations_test() {
 for ((j=1; j<=6; j++)); do
 	orange "tests for $j numbers"
 	do_tests 5 $j
-	operations_test $j $XTN
+	operations_test $j $ROUNDS
 done
 
 # 100
 orange "for 100 numbers"
 do_tests 5 100
-operations_test 100 $XTN
+operations_test 100 $ROUNDS
 
 # 500
 orange "for 500 numbers"
 do_tests 5 500
-operations_test 500 $XTN
+operations_test 500 $ROUNDS
 
 # random tests
 orange "random tests"
