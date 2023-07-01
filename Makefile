@@ -6,9 +6,11 @@
 #    By: obult <obult@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/12/17 17:07:06 by obult         #+#    #+#                  #
-#    Updated: 2021/12/17 17:07:12 by obult         ########   odam.nl          #
+#    Updated: 2023/07/01 17:25:01 by obult         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
+
+export DYLD_FALLBACK_LIBRARY_PATH=/Users/obult/ft_malloc
 
 NAME	= push_swap
 SRC_S	= main.c \
@@ -22,8 +24,9 @@ SRC_S	= main.c \
 OBJ	= ${SRC_S:.c=.o}
 CC		= gcc
 RM		= rm -f
-HEADER	= -I Libft/
+HEADER	= -I Libft/ #../ft_malloc/lib/
 CFLAGS	= -Wall -Werror -Wextra -g
+MALLOCLIB := /Users/obult/ft_malloc/libft_malloc.so
 
 all:		${NAME}
 
@@ -40,7 +43,8 @@ libclean:
 fclean:		clean
 				@${RM} ${NAME} \
 				$(info ************  push_swap Removed) \
-				&& ${MAKE} fclean -C Libft --no-print-directory
+				&& ${MAKE} fclean -C Libft --no-print-directory \
+				&& ${MAKE} fclean -C ../ft_malloc
 
 re:			fclean all
 
@@ -48,10 +52,21 @@ ${NAME}:	${OBJ} Libft/libft.a
 				@${CC} -o $@ $^ \
 				$(info ************  push_swap Ready!)
 
+${MALLOCLIB}:
+				${MAKE} -C ../ft_malloc --no-print-directory
+
+malloc:		${OBJ} Libft/libft.a ${MALLOCLIB}
+				${CC} -o ${NAME} -L. ${MALLOCLIB} $^ \
+				$(info ************  push_swap Ready --with malloc--!)
+
 Libft/libft.a:
 				@${MAKE} -C Libft --no-print-directory
 
 checker:
 				@${MAKE} -C check --no-print-directory
+
+test:		${NAME}
+				export DYLD_FALLBACK_LIBRARY_PATH=/Users/obult/ft_malloc && \
+				./ps_test.sh
 
 .PHONY: all clean fclean re libft
